@@ -56,10 +56,11 @@
             -webkit-backdrop-filter: blur(15px);
         }
 
+        /* Logo, Instagram e Hambúrguer a Preto por definição */
         .logo-img {
             height: clamp(40px, 5vw, 65px);
             width: auto;
-            filter: brightness(0) invert(1);
+            filter: brightness(0.2); /* Força tom escuro */
             transition: var(--transition);
         }
 
@@ -71,7 +72,7 @@
 
         .instagram-icon {
             width: 24px; height: 24px;
-            filter: brightness(0) invert(1);
+            filter: brightness(0.2); /* Força tom escuro */
             transition: var(--transition);
         }
 
@@ -86,7 +87,7 @@
         .menu-toggle span {
             position: absolute;
             width: 30px; height: 1px;
-            background: #ffffff;
+            background: var(--text-dark); /* Cor preta/escura inicial */
             transition: var(--transition);
         }
 
@@ -94,23 +95,11 @@
         .menu-toggle span:nth-child(2) { width: 20px; margin-left: 10px; }
         .menu-toggle span:nth-child(3) { transform: translateY(8px); }
 
-        header.scrolled .logo-img,
-        body.menu-open .logo-img,
-        header.scrolled .instagram-icon,
-        body.menu-open .instagram-icon {
-            filter: brightness(0.2);
-        }
-
-        header.scrolled .menu-toggle span,
-        body.menu-open .menu-toggle span {
-            background: var(--text-dark);
-        }
-
         .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(0); }
         .menu-toggle.active span:nth-child(2) { opacity: 0; }
         .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(0); }
 
-        /* Menu Overlay - Font styles adjusted to match exactly */
+        /* Menu Overlay */
         .menu-overlay {
             position: fixed; inset: 0;
             background: #f4f2f0;
@@ -125,13 +114,13 @@
         .menu-overlay nav li { margin: 25px 0; }
         
         .menu-overlay nav a {
-            font-family: 'Montserrat', sans-serif; /* Same font family */
-            font-size: clamp(20px, 4vw, 32px); /* Scale adjusted */
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(20px, 4vw, 32px);
             color: var(--text-dark);
             text-decoration: none;
-            font-weight: 300; /* Matching weight */
-            text-transform: uppercase; /* Matching transform */
-            letter-spacing: 6px; /* Matching exact spacing */
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 6px;
             transition: var(--transition);
         }
 

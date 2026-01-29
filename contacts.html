@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
-
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GQ0VPE0KMT');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -10,76 +15,67 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         :root {
-            --bg-neutral: #f4f2f0; 
-            --sage-pale: #dfd3c8; 
-            --sage-border: #c2c7be;
+            --bg: #f4f2f0;
             --text-dark: #33312e;
-            --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            --accent: #6b5f54;
+            --ease: cubic-bezier(0.19, 1, 0.22, 1);
+            --transition: all 0.6s var(--ease);
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: var(--bg-neutral);
+            background-color: var(--bg);
             color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Navigation - Logo, Instagram and Burger now BLACK by default */
         header {
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%;
-            padding: 10px 60px; 
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 10px 60px;
             z-index: 3000;
-            display: flex; 
-            justify-content: space-between; 
+            display: flex;
+            justify-content: space-between;
             align-items: center;
             transition: var(--transition);
         }
 
-        header.scrolled {
-            padding: 8px 60px;
-            background: rgba(244, 242, 240, 0.95);
-            backdrop-filter: blur(15px);
-        }
-
-        .logo-img { 
-            height: clamp(40px, 5vw, 65px); 
-            filter: brightness(0.2); 
+        .logo-img {
+            height: clamp(40px, 5vw, 65px);
+            width: auto;
+            filter: brightness(0.2); /* Black/Dark tone */
             transition: var(--transition);
         }
 
-        .header-right { display: flex; align-items: center; gap: 30px; }
-        
-        .instagram-icon { 
-            width: 24px; 
-            height: 24px; 
-            filter: brightness(0.2); 
+        .header-right { display: flex; align-items: center; gap: clamp(20px, 4vw, 50px); }
+
+        .instagram-icon {
+            width: 24px; height: 24px;
+            filter: brightness(0.2); /* Black/Dark tone */
+            transition: var(--transition);
         }
 
-        .menu-toggle { 
-            width: 44px; 
-            height: 44px; 
-            cursor: pointer; 
-            position: relative; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            z-index: 4000; 
+        .menu-toggle {
+            width: 44px; height: 44px;
+            cursor: pointer;
+            position: relative;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 4000;
         }
 
-        .menu-toggle span { 
-            position: absolute; 
-            width: 30px; 
-            height: 1px; 
-            background: var(--text-dark); 
-            transition: var(--transition); 
+        .menu-toggle span {
+            position: absolute;
+            width: 30px; height: 1px;
+            background: var(--text-dark); /* Burger lines now black */
+            transition: var(--transition);
         }
 
         .menu-toggle span:nth-child(1) { transform: translateY(-8px); }
@@ -90,124 +86,153 @@
         .menu-toggle.active span:nth-child(2) { opacity: 0; }
         .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(0); }
 
-        .menu-overlay { 
-            position: fixed; 
-            inset: 0; 
-            background: var(--bg-neutral); 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            opacity: 0; 
-            visibility: hidden; 
-            transition: opacity 0.5s ease; 
-            z-index: 2500; 
+        .menu-overlay {
+            position: fixed; inset: 0;
+            background: var(--bg);
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.5s ease;
+            z-index: 2500;
         }
 
         .menu-overlay.active { opacity: 1; visibility: visible; }
-        .menu-overlay nav ul { list-style: none; text-align: center; }
-        .menu-overlay nav li { margin: 25px 0; }
-        
-        .menu-overlay nav a { 
-            font-family: 'Montserrat', sans-serif; 
-            font-size: clamp(20px, 4vw, 32px); 
-            color: var(--text-dark); 
-            text-decoration: none; 
-            font-weight: 300; 
-            text-transform: uppercase; 
-            letter-spacing: 6px; 
-            transition: var(--transition); 
+        .menu-overlay nav a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(21px, 4.2vw, 33.6px);
+            color: var(--text-dark);
+            text-decoration: none;
+            display: block;
+            margin: 25px 0;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            transition: var(--transition);
+            text-align: center;
         }
 
-        .menu-overlay nav a:hover { opacity: 0.5; letter-spacing: 10px; }
-
+        /* Layout - 2/3 Image, 1/3 Content */
         main {
-            min-height: 100dvh;
-            display: flex; 
-            flex-direction: column; 
-            align-items: center;
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .image-side {
+            width: 66.66%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s var(--ease);
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.2), transparent);
+        }
+
+        .content-side {
+            width: 33.34%;
+            background-color: var(--bg);
+            padding: 80px 5%;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
-            padding: 120px 25px 60px;
+            position: relative;
         }
 
-        .content { 
-            max-width: 650px; 
-            width: 100%; 
-            text-align: center; 
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
         }
 
-        h1 { 
-            font-family: 'Cormorant Garamond', serif; 
-            font-size: clamp(42px, 10vw, 85px); 
-            font-weight: 300; 
-            margin-bottom: 40px; 
-            font-style: italic; 
+        form { display: flex; flex-direction: column; gap: 20px; }
+        .input-group { position: relative; }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--text-dark);
+            transition: 0.4s;
         }
 
-        form { display: flex; flex-direction: column; gap: 15px; }
-
-        input, textarea { 
-            width: 100%; 
-            padding: 18px; 
-            background: #dfd3c8; 
-            border: 1px solid var(--sage-border); 
-            border-radius: 15px; 
-            color: var(--text-dark); 
-            font-family: 'Montserrat', sans-serif; 
-            transition: 0.3s; 
+        input:focus, textarea:focus {
+            outline: none;
+            border-bottom-color: var(--text-dark);
         }
 
-        input:focus, textarea:focus { outline: none; border-color: #8e7f70; background: #fff; }
-        textarea { min-height: 150px; resize: none; }
+        textarea { min-height: 100px; resize: none; }
 
-        button { 
-            margin-top: 15px; 
-            padding: 20px; 
-            background: transparent; 
-            border: 1px solid var(--text-dark); 
-            border-radius: 30px; 
-            color: var(--text-dark); 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            font-size: 0.8rem; 
-            cursor: pointer; 
-            transition: 0.4s; 
-        }
-
-        button:hover { background: #a79385; color: #fff; border-color: #a79385; }
-
-        .direct-contact { 
-            margin-top: 50px; 
-            font-size: 0.9rem; 
-            font-weight: 300; 
-            line-height: 2; 
-            color: #8e7f70; 
-        }
-
-        .direct-contact a { 
-            display: inline-block;
-            color: var(--text-dark); 
-            text-decoration: none; 
-            border-bottom: 1px solid var(--sage-border); 
-            transition: all 0.3s ease;
+        button {
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--text-dark);
+            border: none;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.75rem;
             cursor: pointer;
-            padding-bottom: 2px;
+            transition: 0.4s;
         }
 
-        .direct-contact a:hover { 
-            color: #25D366; 
-            border-bottom-color: #25D366;
-            transform: translateY(-2px);
+        button:hover { opacity: 0.8; transform: translateY(-2px); }
+
+        .direct-contact {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            line-height: 2.2;
         }
 
-        @media (max-width: 768px) {
-            header { padding: 10px 25px; }
+        .direct-contact a {
+            color: var(--text-dark);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .direct-contact a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+        /* Mobile */
+        @media (max-width: 1100px) {
+            main { flex-direction: column; overflow-y: auto; }
+            .image-side { width: 100%; height: 40vh; }
+            .content-side { width: 100%; height: auto; padding: 60px 30px; }
+            body { overflow-y: auto; }
+            header { padding: 20px 30px; }
+        }
+
+        .reveal {
+            opacity: 0;
+            animation: revealUp 1.4s var(--ease) forwards;
+        }
+
+        @keyframes revealUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body id="body">
 
     <header id="header">
-        <a href="index.html"><img src="logo.png" alt="Logo" class="logo-img"></a>
+        <a href="index.html"><img src="logo.png" alt="Stacey Marquez Weddings" class="logo-img"></a>
         <div class="header-right">
             <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank" rel="noopener">
                 <img src="instagram.png" alt="Instagram" class="instagram-icon">
@@ -220,29 +245,38 @@
 
     <div class="menu-overlay" id="menuOverlay">
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contacts.html">Contacts</a></li>
-            </ul>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contacts.html">Contacts</a>
         </nav>
     </div>
 
     <main>
-        <div class="content">
-            <h1>Let's chat</h1>
+        <div class="image-side">
+            <div class="image-overlay"></div>
+            <img src="contact.jpg" alt="Wedding Celebration" id="hero-img">
+        </div>
+
+        <div class="content-side">
+            <h1 class="reveal">Let's chat.</h1>
             
-            <form action="https://formspree.io/f/mykjynba" method="POST">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <textarea name="message" placeholder="A brief note on your celebration in Portugal..." required></textarea>
-                <button type="submit">Submit</button>
+            <form action="https://formspree.io/f/mykjynba" method="POST" class="reveal" style="animation-delay: 0.2s;">
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <textarea name="message" placeholder="Tell us about your celebration..." required></textarea>
+                </div>
+                <button type="submit">Send Inquiry</button>
             </form>
 
-            <div class="direct-contact">
+            <div class="direct-contact reveal" style="animation-delay: 0.4s;">
                 <p>
-                    <a href="https://wa.me/351912580628?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20wedding%20planning%20services." target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/351912580628" target="_blank">
                         +351 912 580 628
                     </a>
                 </p>
@@ -260,11 +294,13 @@
             const active = menuToggle.classList.toggle('active');
             menuOverlay.classList.toggle('active');
             body.classList.toggle('menu-open');
-            body.style.overflow = active ? 'hidden' : '';
+            if (window.innerWidth > 1100) {
+                body.style.overflow = active ? 'hidden' : '';
+            }
         });
 
-        window.addEventListener('scroll', () => {
-            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+        window.addEventListener('load', () => {
+            document.getElementById('hero-img').style.transform = 'scale(1.05)';
         });
     </script>
 </body>
