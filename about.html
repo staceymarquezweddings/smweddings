@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GQ0VPE0KMT');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>About | Stacey Marquez Weddings</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #d0c2b5;
+            --text: #1a1a1a;
+            --text-dark: #33312e;
+            --accent: #6b5f54;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 10px 60px;
+            z-index: 3000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 8px 60px;
+            background: rgba(208, 194, 181, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .logo-img {
+            height: clamp(40px, 5vw, 65px);
+            width: auto;
+            filter: brightness(0) invert(1);
+            transition: var(--transition);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: clamp(20px, 4vw, 50px);
+        }
+
+        .instagram-icon {
+            width: 24px; height: 24px;
+            filter: brightness(0) invert(1);
+            transition: var(--transition);
+        }
+
+        .menu-toggle {
+            width: 44px; height: 44px;
+            cursor: pointer;
+            position: relative;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 4000;
+        }
+
+        .menu-toggle span {
+            position: absolute;
+            width: 30px; height: 1px;
+            background: #ffffff;
+            transition: var(--transition);
+        }
+
+        .menu-toggle span:nth-child(1) { transform: translateY(-8px); }
+        .menu-toggle span:nth-child(2) { width: 20px; margin-left: 10px; }
+        .menu-toggle span:nth-child(3) { transform: translateY(8px); }
+
+        header.scrolled .logo-img,
+        body.menu-open .logo-img,
+        header.scrolled .instagram-icon,
+        body.menu-open .instagram-icon {
+            filter: brightness(0.2);
+        }
+
+        header.scrolled .menu-toggle span,
+        body.menu-open .menu-toggle span {
+            background: var(--text-dark);
+        }
+
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(0); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(0); }
+
+        /* Menu Overlay - Font styles adjusted to match exactly */
+        .menu-overlay {
+            position: fixed; inset: 0;
+            background: #f4f2f0;
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.5s ease;
+            z-index: 2500;
+        }
+
+        .menu-overlay.active { opacity: 1; visibility: visible; }
+        .menu-overlay nav ul { list-style: none; text-align: center; }
+        .menu-overlay nav li { margin: 25px 0; }
+        
+        .menu-overlay nav a {
+            font-family: 'Montserrat', sans-serif; /* Same font family */
+            font-size: clamp(20px, 4vw, 32px); /* Scale adjusted */
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 300; /* Matching weight */
+            text-transform: uppercase; /* Matching transform */
+            letter-spacing: 6px; /* Matching exact spacing */
+            transition: var(--transition);
+        }
+
+        .menu-overlay nav a:hover { opacity: 0.5; letter-spacing: 10px; }
+
+        /* Main Content Layout */
+        main {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .image-side {
+            width: 66.66%;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            overflow: hidden;
+        }
+
+        .image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.02) saturate(0.9);
+            transition: transform 1.2s var(--ease);
+        }
+
+        .content-side {
+            width: 33.34%;
+            padding: 140px 5% 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--bg);
+        }
+
+        .intro-label {
+            font-size: 0.68rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.1rem, 4.2vw, 3.36rem);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.1;
+            margin-bottom: 50px;
+            letter-spacing: -1px;
+        }
+
+        .bio-text p {
+            font-size: 1rem;
+            line-height: 2;
+            font-weight: 300;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.68rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(26,26,26,0.3);
+            padding-bottom: 5px;
+            transition: 0.3s;
+        }
+
+        .social-link:hover { border-bottom-color: var(--text); opacity: 0.7; }
+
+        @media (max-width: 1100px) {
+            header { padding: 10px 25px; }
+            header.scrolled { padding: 8px 25px; }
+            main { flex-direction: column; }
+            .image-side { width: 100%; height: 55vh; position: relative; }
+            .content-side { width: 100%; padding: 60px 30px; }
+        }
+
+        .reveal {
+            opacity: 0;
+            animation: revealUp 1.4s var(--ease) forwards;
+        }
+
+        @keyframes revealUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body id="body">
+
+    <header id="header">
+        <a href="index.html">
+            <img src="logo.png" alt="Stacey Marquez Weddings" class="logo-img">
+        </a>
+        <div class="header-right">
+            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank" rel="noopener">
+                <img src="instagram.png" alt="Instagram" class="instagram-icon">
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="image-side">
+            <img src="about.jpg" alt="Stacey Marquez Wedding Curator">
+        </div>
+
+        <div class="content-side">
+            <span class="intro-label reveal">The Story</span>
+            <h1 class="reveal" style="animation-delay: 0.2s;">Turning shared <br>dreams into <br>timeless legacies.</h1>
+            
+            <div class="bio-text reveal" style="animation-delay: 0.4s;">
+                <p>With over 15 years of experience in international corporate events and luxury travel, I have channeled that precision into my true passion: creating unforgettable weddings in Portugal.</p>
+                
+                <p>I will be your guide and confidante. My approach combines technical management with an aesthetic sensibility, ensuring every detail reflects your vision while respecting the harmony of your budget.</p>
+                
+                <p>Together, we will sculpt a celebration that is as unique and profound as your own love story, leaving you with complete peace of mind throughout the journey.</p>
+                
+                <a href="https://www.instagram.com/staceymarquez.weddings/" class="social-link">Follow the process on Instagram</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const body = document.getElementById('body');
+
+        menuToggle.addEventListener('click', () => {
+            const active = menuToggle.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+            body.style.overflow = active ? 'hidden' : '';
+        });
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        window.addEventListener('load', () => {
+            const img = document.querySelector('.image-side img');
+            if(img) img.style.transform = 'scale(1.05)';
+        });
+    </script>
+</body>
+</html>
