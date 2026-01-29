@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GQ0VPE0KMT');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Stacey Marquez Weddings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f4f2f0; /* Cor de fundo atualizada */
+            --text: #2a2622;
+            --text-dark: #33312e;
+            --gold: #b89f7e;
+            --card: #ffffff;
+            --shadow: 0 20px 60px rgba(0,0,0,0.08);
+            --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.85;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation Header */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 10px 60px;
+            z-index: 3000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 8px 60px;
+            background: rgba(244, 242, 240, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .logo-img {
+            height: clamp(40px, 5vw, 65px);
+            width: auto;
+            filter: brightness(0) invert(1);
+            transition: var(--transition);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: clamp(20px, 4vw, 50px);
+        }
+
+        .instagram-icon {
+            width: 24px; height: 24px;
+            filter: brightness(0) invert(1);
+            transition: var(--transition);
+        }
+
+        .menu-toggle {
+            width: 44px; height: 44px;
+            cursor: pointer;
+            position: relative;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 4000;
+        }
+
+        .menu-toggle span {
+            position: absolute;
+            width: 30px; height: 1px;
+            background: #ffffff;
+            transition: var(--transition);
+        }
+
+        .menu-toggle span:nth-child(1) { transform: translateY(-8px); }
+        .menu-toggle span:nth-child(2) { width: 20px; margin-left: 10px; }
+        .menu-toggle span:nth-child(3) { transform: translateY(8px); }
+
+        header.scrolled .logo-img,
+        body.menu-open .logo-img,
+        header.scrolled .instagram-icon,
+        body.menu-open .instagram-icon {
+            filter: brightness(0.2);
+        }
+
+        header.scrolled .menu-toggle span,
+        body.menu-open .menu-toggle span {
+            background: var(--text-dark);
+        }
+
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(0); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(0); }
+
+        /* Menu Overlay */
+        .menu-overlay {
+            position: fixed; inset: 0;
+            background: var(--bg);
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.5s ease;
+            z-index: 2500;
+        }
+
+        .menu-overlay.active { opacity: 1; visibility: visible; }
+        .menu-overlay nav ul { list-style: none; text-align: center; }
+        .menu-overlay nav li { margin: 25px 0; }
+        .menu-overlay nav a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(21px, 4.2vw, 33.6px);
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            transition: var(--transition);
+        }
+        .menu-overlay nav a:hover { opacity: 0.5; letter-spacing: 10px; }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 55vh;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('services.jpg') center/cover no-repeat fixed;
+            filter: brightness(0.42) contrast(1.1);
+            transform: scale(1.06);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 6%;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4.5rem, 9vw, 8.5rem);
+            font-weight: 400;
+            letter-spacing: 0.08em;
+        }
+
+        .hero-sub {
+            margin-top: 22px;
+            font-size: 0.95rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        /* SERVICES SECTION */
+        .services-section {
+            padding: 150px 6% 130px;
+            max-width: 1800px;
+            margin: auto;
+        }
+
+        .services-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 110px;
+        }
+
+        .services-intro h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.36rem;
+            font-weight: 500;
+            margin-bottom: 0.6em;
+        }
+
+        .services-intro p {
+            font-size: 1.2rem;
+            color: #5a534c;
+            max-width: 720px;
+            margin: auto;
+        }
+
+        /* GRID AND CARDS */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 70px 45px;
+        }
+
+        .service-card {
+            background: var(--card);
+            padding: 65px 48px 55px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.8s ease;
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(184, 159, 126, 0.25);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-22px);
+            box-shadow: 0 40px 110px rgba(0,0,0,0.14);
+        }
+
+        .service-card:hover::before {
+            inset: 14px;
+            opacity: 1;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.31rem;
+            font-weight: 500;
+            margin-bottom: 0.4em;
+        }
+
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.36rem;
+            color: var(--gold);
+            margin-bottom: 1.9em;
+        }
+
+        .service-card ul {
+            list-style: none;
+            font-size: 1.1rem;
+            color: #4f4841;
+        }
+
+        .service-card li {
+            margin-bottom: 1em;
+            padding-left: 1.8em;
+            position: relative;
+        }
+
+        .service-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 1.57rem;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials { padding: 130px 6%; text-align: center; }
+        .testimonials h2 { font-family: 'Playfair Display', serif; font-size: 3.15rem; margin-bottom: 80px; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 80px; }
+        .testimonial { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.47rem; color: #5a534c; max-width: 600px; margin: auto; }
+        .testimonial cite { display: block; margin-top: 1.2em; font-family: 'Montserrat', sans-serif; font-style: normal; font-size: 1rem; color: var(--text); }
+
+        /* CTA */
+        .cta-section { padding: 140px 6%; text-align: center; }
+        .cta-btn {
+            display: inline-block;
+            padding: 26px 95px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 1.15rem;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            transition: 0.5s;
+        }
+        .cta-btn:hover { background: var(--gold); color: white; }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(55px); transition: var(--transition); }
+        .reveal.active { opacity: 1; transform: none; }
+
+        @media (max-width: 1200px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } header { padding: 10px 25px; } }
+    </style>
+</head>
+
+<body id="body">
+
+    <header id="header">
+        <a href="index.html">
+            <img src="logo.png" alt="Stacey Marquez Weddings" class="logo-img">
+        </a>
+        <div class="header-right">
+            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank" rel="noopener">
+                <img src="instagram.png" alt="Instagram" class="instagram-icon">
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content reveal">
+            <h1>Services</h1>
+            <p class="hero-sub">Luxury Wedding Planning in Portugal</p>
+        </div>
+    </div>
+
+    <section class="services-section">
+        <div class="services-intro reveal">
+            <h2>Bespoke Weddings Crafted in Portugal's Timeless Beauty</h2>
+            <p>From intimate elopements to grand multi-day celebrations, we design weddings that honour your story while embracing Portugal’s culture, landscapes, and elegance.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <h3>Full Planning</h3>
+                <div class="tagline">From vision to flawless reality.</div>
+                <ul>
+                    <li>Venue scouting & contract negotiation</li>
+                    <li>Supplier curation & management</li>
+                    <li>Comprehensive budget oversight</li>
+                    <li>Concept, styling & creative direction</li>
+                    <li>Unlimited communication & guidance</li>
+                </ul>
+            </div>
+
+            <div class="service-card reveal">
+                <h3>Multi-Day Events</h3>
+                <div class="tagline">A celebration that unfolds.</div>
+                <ul>
+                    <li>Welcome dinners & rehearsal evenings</li>
+                    <li>Pre & post-wedding experiences</li>
+                    <li>Guest activities & bespoke tours</li>
+                    <li>Full logistics & timeline management</li>
+                </ul>
+            </div>
+
+            <div class="service-card reveal">
+                <h3>Coordination</h3>
+                <div class="tagline">Grace under pressure.</div>
+                <ul>
+                    <li>Pre-wedding preparation & rehearsal</li>
+                    <li>Full wedding day coordination</li>
+                    <li>Supplier supervision & timing control</li>
+                    <li>Guest experience management</li>
+                </ul>
+            </div>
+
+            <div class="service-card reveal">
+                <h3>Consulting</h3>
+                <div class="tagline">Clarity before commitment.</div>
+                <ul>
+                    <li>Curated visits to selected venues</li>
+                    <li>In-depth planning consultation</li>
+                    <li>Supplier recommendations</li>
+                    <li>Budget strategy & optimisation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials reveal">
+        <h2>Kind Words</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                “Every detail felt intentional, elegant, and effortless. Our wedding exceeded every expectation.”
+                <cite>— Emma & João, Lisbon</cite>
+            </div>
+            <div class="testimonial">
+                “Professional, refined, and deeply personal. The best decision we made for our day.”
+                <cite>— Sophia & Michael, Algarve</cite>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section reveal">
+        <a href="contacts.html" class="cta-btn">Begin Your Journey</a>
+    </section>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const body = document.getElementById('body');
+
+        menuToggle.addEventListener('click', () => {
+            const active = menuToggle.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+            body.style.overflow = active ? 'hidden' : '';
+        });
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        const reveals = document.querySelectorAll('.reveal');
+        const revealCheck = () => {
+            reveals.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealCheck);
+        revealCheck();
+    </script>
+</body>
+</html>
