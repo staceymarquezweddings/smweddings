@@ -1,6 +1,54 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
+    <title>Contact Stacey Marquez | Start Planning Your Portugal Wedding</title>
+    <meta name="description" content="Ready to begin your love story in Portugal? Contact Stacey Marquez Weddings for a personalized consultation on luxury destination wedding planning and venue scouting.">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WeddingService",
+      "name": "Stacey Marquez Weddings",
+      "alternateName": "Luxury Wedding Planner Portugal",
+      "description": "Premium wedding planning and venue curation in Portugal for Canadian couples. Specialized in destination weddings, luxury venue scouting, and full event coordination.",
+      "url": "https://www.staceymarquezweddings.com",
+      "telephone": "+351912580628",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PT"
+      },
+      "areaServed": [
+        {"@type": "Country", "name": "Canada"},
+        {"@type": "Country", "name": "Portugal"}
+      ],
+      "knowsAbout": ["Wedding Venues Portugal", "Luxury Weddings Portugal", "Destination Weddings Portugal", "Wedding Planning Portugal"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Wedding Planning Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Luxury Wedding Venue Scouting Portugal"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Destination Wedding Planning Portugal"
+            }
+          }
+        ]
+      },
+      "priceRange": "$$$",
+      "sameAs": [
+        "https://www.instagram.com/staceymarquez.weddings/"
+      ]
+    }
+    </script>
+
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -20,13 +68,13 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Contact | Stacey Marquez Weddings</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
 
     <style>
+        /* NOTA 4: DESIGN - ESTILOS BASE */
         :root {
             --bg: #f4f2f0;
             --text-dark: #33312e;
@@ -45,7 +93,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
+        /* NAVEGAÇÃO */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -118,7 +166,7 @@
             text-align: center;
         }
 
-        /* Layout */
+        /* LAYOUT PRINCIPAL */
         main { display: flex; height: 100vh; width: 100vw; }
         .image-side { width: 66.66%; height: 100vh; overflow: hidden; position: relative; }
         .image-side img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
@@ -137,7 +185,7 @@
         .direct-contact { margin-top: 50px; font-size: 0.8rem; letter-spacing: 1px; line-height: 2.2; }
         .direct-contact a { color: var(--text-dark); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); transition: 0.3s; }
 
-        /* Cookie Banner Styling */
+        /* BANNER COOKIES */
         #cookie-banner {
             position: fixed; bottom: 20px; left: 20px; right: 20px; 
             background: #fff; color: #33312e; padding: 20px; 
@@ -186,7 +234,7 @@
 
     <main>
         <div class="image-side">
-            <img src="contact.jpg" alt="Wedding Celebration" id="hero-img">
+            <img src="contact.jpg" alt="Get in touch for luxury wedding planning in Portugal" id="hero-img">
         </div>
         <div class="content-side">
             <h1 class="reveal">Let's chat.</h1>
@@ -212,6 +260,7 @@
     </div>
 
     <script>
+        // NOTA 6: JAVASCRIPT - MENU
         const menuToggle = document.getElementById('menuToggle');
         const menuOverlay = document.getElementById('menuOverlay');
         const body = document.getElementById('body');
@@ -222,6 +271,7 @@
             body.classList.toggle('menu-open');
         });
 
+        // NOTA 7: JAVASCRIPT - REVELAÇÃO E COOKIES
         window.addEventListener('load', () => {
             document.getElementById('hero-img').style.transform = 'scale(1.05)';
             if (!localStorage.getItem('cookieConsent')) {
