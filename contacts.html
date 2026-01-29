@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'wait_for_update': 500
+      });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
+    <script>
       gtag('js', new Date());
       gtag('config', 'G-GQ0VPE0KMT');
     </script>
@@ -36,7 +45,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation - Logo, Instagram and Burger now BLACK by default */
+        /* Navigation */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -51,7 +60,7 @@
         .logo-img {
             height: clamp(40px, 5vw, 65px);
             width: auto;
-            filter: brightness(0.2); /* Black/Dark tone */
+            filter: brightness(0.2);
             transition: var(--transition);
         }
 
@@ -59,7 +68,7 @@
 
         .instagram-icon {
             width: 24px; height: 24px;
-            filter: brightness(0.2); /* Black/Dark tone */
+            filter: brightness(0.2);
             transition: var(--transition);
         }
 
@@ -74,7 +83,7 @@
         .menu-toggle span {
             position: absolute;
             width: 30px; height: 1px;
-            background: var(--text-dark); /* Burger lines now black */
+            background: var(--text-dark);
             transition: var(--transition);
         }
 
@@ -109,124 +118,47 @@
             text-align: center;
         }
 
-        /* Layout - 2/3 Image, 1/3 Content */
-        main {
-            display: flex;
-            height: 100vh;
-            width: 100vw;
-        }
+        /* Layout */
+        main { display: flex; height: 100vh; width: 100vw; }
+        .image-side { width: 66.66%; height: 100vh; overflow: hidden; position: relative; }
+        .image-side img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+        .content-side { width: 33.34%; background-color: var(--bg); padding: 80px 5%; display: flex; flex-direction: column; justify-content: center; position: relative; }
 
-        .image-side {
-            width: 66.66%;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .image-side img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1.2s var(--ease);
-        }
-
-        .image-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to right, rgba(0,0,0,0.2), transparent);
-        }
-
-        .content-side {
-            width: 33.34%;
-            background-color: var(--bg);
-            padding: 80px 5%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-        }
-
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 300;
-            font-style: italic;
-            line-height: 1;
-            margin-bottom: 40px;
-            letter-spacing: -1px;
-        }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; font-style: italic; line-height: 1; margin-bottom: 40px; letter-spacing: -1px; }
 
         form { display: flex; flex-direction: column; gap: 20px; }
-        .input-group { position: relative; }
-
-        input, textarea {
-            width: 100%;
-            padding: 15px 0;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            color: var(--text-dark);
-            transition: 0.4s;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-bottom-color: var(--text-dark);
-        }
-
+        input, textarea { width: 100%; padding: 15px 0; background: transparent; border: none; border-bottom: 1px solid rgba(0,0,0,0.1); font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--text-dark); transition: 0.4s; }
+        input:focus, textarea:focus { outline: none; border-bottom-color: var(--text-dark); }
         textarea { min-height: 100px; resize: none; }
 
-        button {
-            margin-top: 20px;
-            padding: 20px;
-            background: var(--text-dark);
-            border: none;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: 0.4s;
-        }
-
+        button { margin-top: 20px; padding: 20px; background: var(--text-dark); border: none; color: #fff; text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; cursor: pointer; transition: 0.4s; }
         button:hover { opacity: 0.8; transform: translateY(-2px); }
 
-        .direct-contact {
-            margin-top: 50px;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            line-height: 2.2;
+        .direct-contact { margin-top: 50px; font-size: 0.8rem; letter-spacing: 1px; line-height: 2.2; }
+        .direct-contact a { color: var(--text-dark); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); transition: 0.3s; }
+
+        /* Cookie Banner Styling */
+        #cookie-banner {
+            position: fixed; bottom: 20px; left: 20px; right: 20px; 
+            background: #fff; color: #33312e; padding: 20px; 
+            z-index: 9999; border: 1px solid rgba(0,0,0,0.1); 
+            display: flex; justify-content: space-between; align-items: center; 
+            font-size: 0.75rem; letter-spacing: 1px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 10px; 
+            visibility: hidden; opacity: 0; transition: 0.5s ease;
         }
 
-        .direct-contact a {
-            color: var(--text-dark);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
-        .direct-contact a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-
-        /* Mobile */
         @media (max-width: 1100px) {
             main { flex-direction: column; overflow-y: auto; }
             .image-side { width: 100%; height: 40vh; }
             .content-side { width: 100%; height: auto; padding: 60px 30px; }
             body { overflow-y: auto; }
             header { padding: 20px 30px; }
+            #cookie-banner { flex-direction: column; text-align: center; gap: 15px; bottom: 10px; left: 10px; right: 10px; }
         }
 
-        .reveal {
-            opacity: 0;
-            animation: revealUp 1.4s var(--ease) forwards;
-        }
-
-        @keyframes revealUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .reveal { opacity: 0; animation: revealUp 1.4s var(--ease) forwards; }
+        @keyframes revealUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body id="body">
@@ -254,36 +186,30 @@
 
     <main>
         <div class="image-side">
-            <div class="image-overlay"></div>
             <img src="contact.jpg" alt="Wedding Celebration" id="hero-img">
         </div>
-
         <div class="content-side">
             <h1 class="reveal">Let's chat.</h1>
-            
             <form action="https://formspree.io/f/mykjynba" method="POST" class="reveal" style="animation-delay: 0.2s;">
-                <div class="input-group">
-                    <input type="text" name="name" placeholder="Full Name" required>
-                </div>
-                <div class="input-group">
-                    <input type="email" name="email" placeholder="Email Address" required>
-                </div>
-                <div class="input-group">
-                    <textarea name="message" placeholder="Tell us about your celebration..." required></textarea>
-                </div>
+                <div class="input-group"><input type="text" name="name" placeholder="Full Name" required></div>
+                <div class="input-group"><input type="email" name="email" placeholder="Email Address" required></div>
+                <div class="input-group"><textarea name="message" placeholder="Tell us about your celebration..." required></textarea></div>
                 <button type="submit">Send Inquiry</button>
             </form>
-
             <div class="direct-contact reveal" style="animation-delay: 0.4s;">
-                <p>
-                    <a href="https://wa.me/351912580628" target="_blank">
-                        +351 912 580 628
-                    </a>
-                </p>
+                <p><a href="https://wa.me/351912580628" target="_blank">+351 912 580 628</a></p>
                 <p><a href="mailto:stacey_marquez@hotmail.com">stacey_marquez@hotmail.com</a></p>
             </div>
         </div>
     </main>
+
+    <div id="cookie-banner">
+        <div style="padding-right: 20px;">This website uses cookies to enhance your experience.</div>
+        <div style="display: flex; gap: 10px;">
+            <button onclick="acceptCookies()" style="background: #33312e; color: #fff; border: none; padding: 10px 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 0.6rem; border-radius: 5px;">Accept</button>
+            <button onclick="hideBanner()" style="background: transparent; color: #33312e; border: 1px solid #33312e; padding: 10px 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 0.6rem; border-radius: 5px;">Decline</button>
+        </div>
+    </div>
 
     <script>
         const menuToggle = document.getElementById('menuToggle');
@@ -294,14 +220,34 @@
             const active = menuToggle.classList.toggle('active');
             menuOverlay.classList.toggle('active');
             body.classList.toggle('menu-open');
-            if (window.innerWidth > 1100) {
-                body.style.overflow = active ? 'hidden' : '';
-            }
         });
 
         window.addEventListener('load', () => {
             document.getElementById('hero-img').style.transform = 'scale(1.05)';
+            if (!localStorage.getItem('cookieConsent')) {
+                const banner = document.getElementById('cookie-banner');
+                banner.style.visibility = 'visible';
+                banner.style.opacity = '1';
+            }
         });
+
+        function acceptCookies() {
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted',
+                'ad_storage': 'granted'
+            });
+            localStorage.setItem('cookieConsent', 'accepted');
+            hideBanner();
+        }
+
+        function hideBanner() {
+            const banner = document.getElementById('cookie-banner');
+            banner.style.opacity = '0';
+            setTimeout(() => { banner.style.visibility = 'hidden'; }, 500);
+            if (!localStorage.getItem('cookieConsent')) {
+                localStorage.setItem('cookieConsent', 'declined');
+            }
+        }
     </script>
 </body>
 </html>

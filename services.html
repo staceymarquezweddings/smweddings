@@ -19,7 +19,7 @@
 
     <style>
         :root {
-            --bg: #f4f2f0; /* Cor de fundo atualizada */
+            --bg: #f4f2f0;
             --text: #2a2622;
             --text-dark: #33312e;
             --gold: #b89f7e;
@@ -39,7 +39,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation Header */
+        /* Navigation - BLACK by default */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -61,7 +61,7 @@
         .logo-img {
             height: clamp(40px, 5vw, 65px);
             width: auto;
-            filter: brightness(0) invert(1);
+            filter: brightness(0.2); /* Black/Dark tone */
             transition: var(--transition);
         }
 
@@ -73,7 +73,7 @@
 
         .instagram-icon {
             width: 24px; height: 24px;
-            filter: brightness(0) invert(1);
+            filter: brightness(0.2); /* Black/Dark tone */
             transition: var(--transition);
         }
 
@@ -88,25 +88,13 @@
         .menu-toggle span {
             position: absolute;
             width: 30px; height: 1px;
-            background: #ffffff;
+            background: var(--text-dark); /* Burger black by default */
             transition: var(--transition);
         }
 
         .menu-toggle span:nth-child(1) { transform: translateY(-8px); }
         .menu-toggle span:nth-child(2) { width: 20px; margin-left: 10px; }
         .menu-toggle span:nth-child(3) { transform: translateY(8px); }
-
-        header.scrolled .logo-img,
-        body.menu-open .logo-img,
-        header.scrolled .instagram-icon,
-        body.menu-open .instagram-icon {
-            filter: brightness(0.2);
-        }
-
-        header.scrolled .menu-toggle span,
-        body.menu-open .menu-toggle span {
-            background: var(--text-dark);
-        }
 
         .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(0); }
         .menu-toggle.active span:nth-child(2) { opacity: 0; }
@@ -127,7 +115,7 @@
         .menu-overlay nav li { margin: 25px 0; }
         .menu-overlay nav a {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(21px, 4.2vw, 33.6px);
+            font-size: clamp(20px, 4vw, 32px);
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 300;
@@ -206,7 +194,6 @@
             margin: auto;
         }
 
-        /* GRID AND CARDS */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
