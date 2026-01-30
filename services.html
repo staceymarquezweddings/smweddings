@@ -2,78 +2,7 @@
 <html lang="en-CA">
 <head>
     <title>Wedding Venue Scouting & Planning Services Portugal | Stacey Marquez</title>
-    <meta name="description" content="Discover premium wedding venues in Portugal. Specialized venue scouting, full planning, and coordination for Canadian couples seeking a luxury destination wedding.">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WeddingService",
-      "name": "Stacey Marquez Weddings",
-      "alternateName": "Luxury Wedding Planner Portugal",
-      "description": "Premium wedding planning and venue curation in Portugal for Canadian couples. Specialized in luxury venue scouting and full event coordination.",
-      "url": "https://www.staceymarquezweddings.com",
-      "telephone": "+351912580628",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "PT"
-      },
-      "areaServed": [
-        {"@type": "Country", "name": "Canada"},
-        {"@type": "Country", "name": "Portugal"}
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Wedding Planning Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Luxury Wedding Venue Scouting Portugal"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Destination Wedding Planning Portugal"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Full Service Wedding Coordination"
-            }
-          }
-        ]
-      },
-      "knowsAbout": ["Wedding Venues Portugal", "Luxury Weddings Portugal", "Destination Weddings Portugal", "Wedding Planning Portugal"],
-      "priceRange": "$$$",
-      "sameAs": [
-        "https://www.instagram.com/staceymarquez.weddings/"
-      ]
-    }
-    </script>
-
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied',
-        'wait_for_update': 500
-      });
-    </script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
-    <script>
-      gtag('js', new Date());
-      gtag('config', 'G-GQ0VPE0KMT');
-    </script>
+    <meta name="description" content="Discover premium wedding venues in Portugal. Specialized venue scouting, full planning, and coordination for Canadian couples.">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* NOTA 4: DESIGN - ESTILOS BASE */
         :root {
             --bg: #f4f2f0;
             --text: #2a2622;
@@ -91,7 +19,7 @@
             --gold: #b89f7e;
             --card: #ffffff;
             --shadow: 0 20px 60px rgba(0,0,0,0.08);
-            --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            --transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -109,7 +37,7 @@
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
-            padding: 10px 60px;
+            padding: 20px 60px;
             z-index: 3000;
             display: flex;
             justify-content: space-between;
@@ -118,46 +46,17 @@
         }
 
         header.scrolled {
-            padding: 8px 60px;
+            padding: 12px 60px;
             background: rgba(244, 242, 240, 0.95);
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
         }
 
-        .logo-img {
-            height: clamp(40px, 5vw, 65px);
-            width: auto;
-            filter: brightness(0.2);
-            transition: var(--transition);
-        }
+        .logo-img { height: clamp(40px, 5vw, 65px); filter: brightness(0.2); }
+        .header-right { display: flex; align-items: center; gap: 40px; }
+        .instagram-icon { width: 22px; filter: brightness(0.2); }
 
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: clamp(20px, 4vw, 50px);
-        }
-
-        .instagram-icon {
-            width: 24px; height: 24px;
-            filter: brightness(0.2);
-            transition: var(--transition);
-        }
-
-        .menu-toggle {
-            width: 44px; height: 44px;
-            cursor: pointer;
-            position: relative;
-            display: flex; align-items: center; justify-content: center;
-            z-index: 4000;
-        }
-
-        .menu-toggle span {
-            position: absolute;
-            width: 30px; height: 1px;
-            background: var(--text-dark);
-            transition: var(--transition);
-        }
-
+        .menu-toggle { width: 44px; height: 44px; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; z-index: 4000; }
+        .menu-toggle span { position: absolute; width: 30px; height: 1px; background: var(--text-dark); transition: var(--transition); }
         .menu-toggle span:nth-child(1) { transform: translateY(-8px); }
         .menu-toggle span:nth-child(2) { width: 20px; margin-left: 10px; }
         .menu-toggle span:nth-child(3) { transform: translateY(8px); }
@@ -174,103 +73,104 @@
             transition: opacity 0.5s ease;
             z-index: 2500;
         }
-
         .menu-overlay.active { opacity: 1; visibility: visible; }
         .menu-overlay nav ul { list-style: none; text-align: center; }
         .menu-overlay nav li { margin: 25px 0; }
-        .menu-overlay nav a {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(20px, 4vw, 32px);
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 300;
+        .menu-overlay nav a { font-size: 24px; color: var(--text-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 6px; }
+
+        /* INTRO SECTION: IMAGEM AO LADO DO TEXTO */
+        .intro-hero {
+            display: flex;
+            min-height: 80vh;
+            margin-top: 80px;
+            background: var(--bg);
+        }
+
+        .intro-image-side {
+            width: 50%;
+            height: 80vh;
+            overflow: hidden;
+        }
+
+        .intro-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .intro-text-side {
+            width: 50%;
+            padding: 0 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .intro-text-side span {
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
             text-transform: uppercase;
-            letter-spacing: 6px;
-            transition: var(--transition);
-        }
-        .menu-overlay nav a:hover { opacity: 0.5; letter-spacing: 10px; }
-
-        /* HERO */
-        .hero {
-            position: relative; height: 55vh; min-height: 480px;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center; color: white; overflow: hidden;
+            color: var(--gold);
+            margin-bottom: 20px;
         }
 
-        .hero-bg {
-            position: absolute; inset: 0;
-            background: url('services.jpg') center/cover no-repeat fixed;
-            filter: brightness(0.42) contrast(1.1); transform: scale(1.06);
+        .intro-text-side h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 40px;
+            color: var(--text-dark);
         }
 
-        .hero-content { position: relative; z-index: 2; padding: 0 6%; }
+        .intro-text-side p {
+            font-size: 1.1rem;
+            color: #5a534c;
+            max-width: 500px;
+        }
 
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(4.5rem, 9vw, 8.5rem); font-weight: 400; letter-spacing: 0.08em; }
+        /* SERVICES GRID */
+        .services-section { padding: 120px 6%; max-width: 1800px; margin: auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .service-card { background: var(--card); padding: 50px 35px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid rgba(0,0,0,0.02); }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 500; margin-bottom: 0.5em; }
+        .tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--gold); margin-bottom: 1.5em; }
+        .service-card ul { list-style: none; font-size: 0.9rem; color: #4f4841; }
+        .service-card li { margin-bottom: 0.8em; padding-left: 1.5em; position: relative; }
+        .service-card li::before { content: "•"; position: absolute; left: 0; color: var(--gold); }
 
-        .hero-sub { margin-top: 22px; font-size: 0.95rem; letter-spacing: 0.35em; text-transform: uppercase; opacity: 0.9; }
-
-        /* SERVICES SECTION */
-        .services-section { padding: 150px 6% 130px; max-width: 1800px; margin: auto; }
-        .services-intro { text-align: center; max-width: 900px; margin: 0 auto 110px; }
-        .services-intro h2 { font-family: 'Playfair Display', serif; font-size: 3.36rem; font-weight: 500; margin-bottom: 0.6em; }
-        .services-intro p { font-size: 1.2rem; color: #5a534c; max-width: 720px; margin: auto; }
-
-        .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 70px 45px; }
-        .service-card { background: var(--card); padding: 65px 48px 55px; box-shadow: var(--shadow); position: relative; transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.8s ease; }
-        .service-card::before { content: ""; position: absolute; inset: 0; border: 1px solid rgba(184, 159, 126, 0.25); opacity: 0; transition: all 0.6s ease; }
-        .service-card:hover { transform: translateY(-22px); box-shadow: 0 40px 110px rgba(0,0,0,0.14); }
-        .service-card:hover::before { inset: 14px; opacity: 1; }
-        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 2.31rem; font-weight: 500; margin-bottom: 0.4em; }
-        .tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.36rem; color: var(--gold); margin-bottom: 1.9em; }
-        .service-card ul { list-style: none; font-size: 1.1rem; color: #4f4841; }
-        .service-card li { margin-bottom: 1em; padding-left: 1.8em; position: relative; }
-        .service-card li::before { content: "•"; position: absolute; left: 0; color: var(--gold); font-size: 1.57rem; }
-
-        /* TESTIMONIALS */
-        .testimonials { padding: 130px 6%; text-align: center; }
-        .testimonials h2 { font-family: 'Playfair Display', serif; font-size: 3.15rem; margin-bottom: 80px; }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 80px; }
-        .testimonial { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.47rem; color: #5a534c; max-width: 600px; margin: auto; }
-        .testimonial cite { display: block; margin-top: 1.2em; font-family: 'Montserrat', sans-serif; font-style: normal; font-size: 1rem; color: var(--text); }
-
-        /* CTA */
-        .cta-section { padding: 140px 6%; text-align: center; }
-        .cta-btn { display: inline-block; padding: 26px 95px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 1.15rem; letter-spacing: 0.32em; text-transform: uppercase; transition: 0.5s; }
+        /* TESTIMONIALS & CTA */
+        .testimonials { padding: 80px 6%; text-align: center; background: #edeae7; }
+        .testimonials h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 50px; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; max-width: 1200px; margin: auto; }
+        .testimonial { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; }
+        
+        .cta-section { padding: 100px 6%; text-align: center; }
+        .cta-btn { display: inline-block; padding: 20px 50px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.3em; text-transform: uppercase; transition: 0.4s; }
         .cta-btn:hover { background: var(--gold); color: white; }
 
-        /* BANNER COOKIES */
-        #cookie-banner {
-            position: fixed; bottom: 20px; left: 20px; right: 20px; 
-            background: #fff; color: #33312e; padding: 20px; 
-            z-index: 9999; border: 1px solid rgba(0,0,0,0.1); 
-            display: flex; justify-content: space-between; align-items: center; 
-            font-size: 0.75rem; letter-spacing: 1px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 10px; 
-            visibility: hidden; opacity: 0; transition: 0.5s ease;
-        }
-
-        /* REVEAL */
-        .reveal { opacity: 0; transform: translateY(55px); transition: var(--transition); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: var(--transition); }
         .reveal.active { opacity: 1; transform: none; }
 
-        @media (max-width: 1200px) { .services-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } header { padding: 10px 25px; } #cookie-banner { flex-direction: column; text-align: center; gap: 15px; bottom: 10px; left: 10px; right: 10px; } }
+        @media (max-width: 1200px) { 
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .intro-hero { flex-direction: column; }
+            .intro-image-side, .intro-text-side { width: 100%; }
+            .intro-text-side { padding: 80px 30px; }
+        }
+        @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 
 <body id="body">
 
     <header id="header">
-        <a href="index.html">
-            <img src="logo.png" alt="Stacey Marquez Weddings" class="logo-img">
-        </a>
+        <a href="index.html"><img src="logo.png" alt="Stacey Marquez Weddings" class="logo-img"></a>
         <div class="header-right">
-            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank" rel="noopener">
-                <img src="instagram.png" alt="Instagram" class="instagram-icon">
-            </a>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span><span></span><span></span>
-            </div>
+            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank"><img src="instagram.png" alt="Instagram" class="instagram-icon"></a>
+            <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
         </div>
     </header>
 
@@ -285,20 +185,18 @@
         </nav>
     </div>
 
-    <div class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content reveal">
-            <h1>Services</h1>
-            <p class="hero-sub">Luxury Wedding Planning in Portugal</p>
+    <section class="intro-hero">
+        <div class="intro-image-side reveal">
+            <img src="services.jpg" alt="Bespoke Wedding Detail Portugal">
         </div>
-    </div>
-
-    <section class="services-section">
-        <div class="services-intro reveal">
-            <h2>Bespoke Weddings Crafted in Portugal's Timeless Beauty</h2>
+        <div class="intro-text-side reveal">
+            <span>The Experience</span>
+            <h1>Services</h1>
             <p>From intimate elopements to grand multi-day celebrations, we design weddings that honour your story while embracing Portugal’s culture, landscapes, and elegance.</p>
         </div>
+    </section>
 
+    <section class="services-section">
         <div class="services-grid">
             <div class="service-card reveal">
                 <h3>Full Planning</h3>
@@ -311,7 +209,6 @@
                     <li>Unlimited communication & guidance</li>
                 </ul>
             </div>
-
             <div class="service-card reveal">
                 <h3>Multi-Day Events</h3>
                 <div class="tagline">A celebration that unfolds.</div>
@@ -322,7 +219,6 @@
                     <li>Full logistics & timeline management</li>
                 </ul>
             </div>
-
             <div class="service-card reveal">
                 <h3>Coordination</h3>
                 <div class="tagline">Grace under pressure.</div>
@@ -333,7 +229,6 @@
                     <li>Guest experience management</li>
                 </ul>
             </div>
-
             <div class="service-card reveal">
                 <h3>Consulting</h3>
                 <div class="tagline">Clarity before commitment.</div>
@@ -350,14 +245,8 @@
     <section class="testimonials reveal">
         <h2>Kind Words</h2>
         <div class="testimonial-grid">
-            <div class="testimonial">
-                “Every detail felt intentional, elegant, and effortless. Our wedding exceeded every expectation.”
-                <cite>— Emma & João, Lisbon</cite>
-            </div>
-            <div class="testimonial">
-                “Professional, refined, and deeply personal. The best decision we made for our day.”
-                <cite>— Sophia & Michael, Algarve</cite>
-            </div>
+            <div class="testimonial">“Every detail felt intentional, elegant, and effortless.”<br>Emma & João</div>
+            <div class="testimonial">“Professional, refined, and deeply personal.”<br>Sophia & Michael</div>
         </div>
     </section>
 
@@ -365,32 +254,18 @@
         <a href="contacts.html" class="cta-btn">Begin Your Journey</a>
     </section>
 
-    <div id="cookie-banner">
-        <div style="padding-right: 20px;">This website uses cookies to enhance your experience.</div>
-        <div style="display: flex; gap: 10px;">
-            <button onclick="acceptCookies()" style="background: #33312e; color: #fff; border: none; padding: 10px 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 0.6rem; border-radius: 5px;">Accept</button>
-            <button onclick="hideBanner()" style="background: transparent; color: #33312e; border: 1px solid #33312e; padding: 10px 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 0.6rem; border-radius: 5px;">Decline</button>
-        </div>
-    </div>
-
     <script>
-        // NOTA 6: JAVASCRIPT - MENU
         const menuToggle = document.getElementById('menuToggle');
         const menuOverlay = document.getElementById('menuOverlay');
         const body = document.getElementById('body');
-
         menuToggle.addEventListener('click', () => {
-            const active = menuToggle.classList.toggle('active');
+            menuToggle.classList.toggle('active');
             menuOverlay.classList.toggle('active');
             body.classList.toggle('menu-open');
-            body.style.overflow = active ? 'hidden' : '';
         });
-
         window.addEventListener('scroll', () => {
             document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         });
-
-        // NOTA 7: JAVASCRIPT - REVEAL E COOKIES
         const reveals = document.querySelectorAll('.reveal');
         const revealCheck = () => {
             reveals.forEach(el => {
@@ -401,32 +276,6 @@
         };
         window.addEventListener('scroll', revealCheck);
         revealCheck();
-
-        window.addEventListener('load', () => {
-            if (!localStorage.getItem('cookieConsent')) {
-                const banner = document.getElementById('cookie-banner');
-                banner.style.visibility = 'visible';
-                banner.style.opacity = '1';
-            }
-        });
-
-        function acceptCookies() {
-            gtag('consent', 'update', {
-                'analytics_storage': 'granted',
-                'ad_storage': 'granted'
-            });
-            localStorage.setItem('cookieConsent', 'accepted');
-            hideBanner();
-        }
-
-        function hideBanner() {
-            const banner = document.getElementById('cookie-banner');
-            banner.style.opacity = '0';
-            setTimeout(() => { banner.style.visibility = 'hidden'; }, 500);
-            if (!localStorage.getItem('cookieConsent')) {
-                localStorage.setItem('cookieConsent', 'declined');
-            }
-        }
     </script>
 </body>
 </html>
