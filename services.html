@@ -5,7 +5,7 @@
     <meta name="description" content="Discover premium wedding venues in Portugal. Specialized venue scouting, full planning, and coordination for Canadian couples.">
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +15,11 @@
         :root {
             --bg: #f4f2f0;
             --text: #2a2622;
-            --text-dark: #33312e;
+            --text-dark: #1a1a1a;
             --gold: #b89f7e;
             --card: #ffffff;
             --shadow: 0 20px 60px rgba(0,0,0,0.08);
-            --transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+            --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -33,7 +33,8 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* NAVEGAÇÃO */
+        body.menu-open { overflow: hidden; }
+
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -46,14 +47,14 @@
         }
 
         header.scrolled {
-            padding: 12px 60px;
+            padding: 15px 60px;
             background: rgba(244, 242, 240, 0.95);
             backdrop-filter: blur(15px);
         }
 
-        .logo-img { height: clamp(40px, 5vw, 65px); filter: brightness(0.2); }
-        .header-right { display: flex; align-items: center; gap: 40px; }
-        .instagram-icon { width: 22px; filter: brightness(0.2); }
+        .logo-img { height: 65px; width: auto; filter: brightness(0.2); transition: var(--transition); }
+        .header-right { display: flex; align-items: center; gap: 30px; }
+        .instagram-icon { width: 24px; height: 24px; filter: brightness(0.2); }
 
         .menu-toggle { width: 44px; height: 44px; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; z-index: 4000; }
         .menu-toggle span { position: absolute; width: 30px; height: 1px; background: var(--text-dark); transition: var(--transition); }
@@ -78,74 +79,31 @@
         .menu-overlay nav li { margin: 25px 0; }
         .menu-overlay nav a { font-size: 24px; color: var(--text-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 6px; }
 
-        /* INTRO SECTION: IMAGEM AO LADO DO TEXTO */
-        .intro-hero {
-            display: flex;
-            min-height: 80vh;
-            margin-top: 80px;
-            background: var(--bg);
-        }
-
-        .intro-image-side {
-            width: 50%;
-            height: 80vh;
-            overflow: hidden;
-        }
-
-        .intro-image-side img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .intro-text-side {
-            width: 50%;
-            padding: 0 8%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: left;
-        }
-
-        .intro-text-side span {
-            font-size: 0.8rem;
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .intro-text-side h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: 40px;
-            color: var(--text-dark);
-        }
-
-        .intro-text-side p {
-            font-size: 1.1rem;
-            color: #5a534c;
-            max-width: 500px;
-        }
+        /* INTRO SECTION */
+        .intro-hero { display: flex; min-height: 80vh; margin-top: 80px; }
+        .intro-image-side { width: 50%; height: 80vh; overflow: hidden; }
+        .intro-image-side img { width: 100%; height: 100%; object-fit: cover; }
+        .intro-text-side { width: 50%; padding: 0 8%; display: flex; flex-direction: column; justify-content: center; }
+        .intro-text-side span { font-size: 0.8rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+        .intro-text-side h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 6vw, 5rem); font-weight: 400; line-height: 1.1; margin-bottom: 40px; color: var(--text-dark); }
+        .intro-text-side p { font-size: 1.1rem; color: #5a534c; max-width: 500px; }
 
         /* SERVICES GRID */
-        .services-section { padding: 120px 6%; max-width: 1800px; margin: auto; }
-        .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-        .service-card { background: var(--card); padding: 50px 35px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid rgba(0,0,0,0.02); }
+        .services-section { padding: 120px 6%; max-width: 1600px; margin: auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        .service-card { background: var(--card); padding: 60px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid rgba(0,0,0,0.02); }
         .service-card:hover { transform: translateY(-10px); }
-        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 500; margin-bottom: 0.5em; }
-        .tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; color: var(--gold); margin-bottom: 1.5em; }
-        .service-card ul { list-style: none; font-size: 0.9rem; color: #4f4841; }
-        .service-card li { margin-bottom: 0.8em; padding-left: 1.5em; position: relative; }
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 500; margin-bottom: 0.5em; color: var(--text-dark); }
+        .tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; color: var(--gold); margin-bottom: 1.5em; }
+        .service-card p { font-size: 1rem; color: #4f4841; margin-bottom: 25px; }
+        .service-card ul { list-style: none; font-size: 0.95rem; color: #4f4841; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .service-card li { padding-left: 1.5em; position: relative; }
         .service-card li::before { content: "•"; position: absolute; left: 0; color: var(--gold); }
 
         /* TESTIMONIALS & CTA */
         .testimonials { padding: 80px 6%; text-align: center; background: #edeae7; }
         .testimonials h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 50px; }
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; max-width: 1200px; margin: auto; }
-        .testimonial { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; }
         
         .cta-section { padding: 100px 6%; text-align: center; }
         .cta-btn { display: inline-block; padding: 20px 50px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.3em; text-transform: uppercase; transition: 0.4s; }
@@ -154,13 +112,16 @@
         .reveal { opacity: 0; transform: translateY(20px); transition: var(--transition); }
         .reveal.active { opacity: 1; transform: none; }
 
-        @media (max-width: 1200px) { 
-            .services-grid { grid-template-columns: 1fr 1fr; }
-            .intro-hero { flex-direction: column; }
+        @media (max-width: 1100px) {
+            header, header.scrolled { padding: 15px 25px; }
+            .logo-img { height: 45px; }
+            .intro-hero { flex-direction: column; margin-top: 60px; }
             .intro-image-side, .intro-text-side { width: 100%; }
-            .intro-text-side { padding: 80px 30px; }
+            .intro-text-side { padding: 60px 30px; text-align: center; }
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card { padding: 40px; }
+            .service-card ul { grid-template-columns: 1fr; }
         }
-        @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 
@@ -187,7 +148,7 @@
 
     <section class="intro-hero">
         <div class="intro-image-side reveal">
-            <img src="services.jpg" alt="Bespoke Wedding Detail Portugal">
+            <img src="services.jpg" alt="Wedding Luxury Portugal">
         </div>
         <div class="intro-text-side reveal">
             <span>The Experience</span>
@@ -199,44 +160,54 @@
     <section class="services-section">
         <div class="services-grid">
             <div class="service-card reveal">
-                <h3>Full Planning</h3>
+                <h3>Full Planning & Design</h3>
                 <div class="tagline">From vision to flawless reality.</div>
+                <p>The complete journey for couples seeking absolute peace of mind. Includes initial style and budget alignment, creative concept development with moodboards, and contract negotiation for all suppliers. We handle the venue scouting with visits to 3 curated locations and manage every logistical detail with total financial transparency.</p>
                 <ul>
-                    <li>Venue scouting & contract negotiation</li>
-                    <li>Supplier curation & management</li>
-                    <li>Comprehensive budget oversight</li>
-                    <li>Concept, styling & creative direction</li>
-                    <li>Unlimited communication & guidance</li>
+                    <li>Moodboards & Styling</li>
+                    <li>Venue Scouting (3 visits)</li>
+                    <li>Financial Transparency</li>
+                    <li>Supplier Management</li>
+                    <li>Final "Wedding Bible"</li>
+                    <li>Onsite Coordination Team</li>
                 </ul>
             </div>
+
             <div class="service-card reveal">
-                <h3>Multi-Day Events</h3>
+                <h3>Multi-Day Experience</h3>
                 <div class="tagline">A celebration that unfolds.</div>
+                <p>Specialized expertise in managing destination wedding journeys that span several days. From welcome dinners and rehearsal evenings to post-wedding brunches or themed sunset parties, we ensure every guest experience is seamless. We handle all logistics and guest activities, allowing you to focus solely on the celebration.</p>
                 <ul>
-                    <li>Welcome dinners & rehearsal evenings</li>
-                    <li>Pre & post-wedding experiences</li>
-                    <li>Guest activities & bespoke tours</li>
-                    <li>Full logistics & timeline management</li>
+                    <li>Welcome Dinners</li>
+                    <li>Rehearsal Coordination</li>
+                    <li>Themed Parties & Brunches</li>
+                    <li>Full Logistics Management</li>
+                    <li>Guest Activity Planning</li>
+                    <li>Bespoke Tour Curation</li>
                 </ul>
             </div>
+
             <div class="service-card reveal">
-                <h3>Coordination</h3>
+                <h3>Bespoke Coordination</h3>
                 <div class="tagline">Grace under pressure.</div>
+                <p>For couples who have already planned their details but need expert execution. Includes a final online meeting and rehearsal to ensure every supplier and timeline is strictly followed. On the day, our onsite team manages all logistics and supplier supervision so you can be fully present.</p>
                 <ul>
-                    <li>Pre-wedding preparation & rehearsal</li>
-                    <li>Full wedding day coordination</li>
-                    <li>Supplier supervision & timing control</li>
-                    <li>Guest experience management</li>
+                    <li>1 Online Briefing Meeting</li>
+                    <li>Rehearsal Coordination</li>
+                    <li>Onsite Event Team</li>
+                    <li>Supplier Supervision</li>
                 </ul>
             </div>
+
             <div class="service-card reveal">
-                <h3>Consulting</h3>
+                <h3>Expert Consulting</h3>
                 <div class="tagline">Clarity before commitment.</div>
+                <p>Need a professional second opinion? We offer specialized site inspections—planning visits for tastings, table settings, and decor. Alternatively, our **Online Consult (1.5h)** provides clarity on problem-solving, budget reduction strategies, and timeline guidance for those planning independently.</p>
                 <ul>
-                    <li>Curated visits to selected venues</li>
-                    <li>In-depth planning consultation</li>
-                    <li>Supplier recommendations</li>
-                    <li>Budget strategy & optimisation</li>
+                    <li>1.5h Strategic Session</li>
+                    <li>Budget Strategy</li>
+                    <li>Site Inspection Planning</li>
+                    <li>Post-Visit Feedback</li>
                 </ul>
             </div>
         </div>
@@ -258,14 +229,17 @@
         const menuToggle = document.getElementById('menuToggle');
         const menuOverlay = document.getElementById('menuOverlay');
         const body = document.getElementById('body');
+
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             menuOverlay.classList.toggle('active');
             body.classList.toggle('menu-open');
         });
+
         window.addEventListener('scroll', () => {
             document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         });
+
         const reveals = document.querySelectorAll('.reveal');
         const revealCheck = () => {
             reveals.forEach(el => {

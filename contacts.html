@@ -2,69 +2,7 @@
 <html lang="en-CA">
 <head>
     <title>Contact Stacey Marquez | Start Planning Your Portugal Wedding</title>
-    <meta name="description" content="Ready to begin your love story in Portugal? Contact Stacey Marquez Weddings for a personalized consultation on luxury destination wedding planning and venue scouting.">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WeddingService",
-      "name": "Stacey Marquez Weddings",
-      "alternateName": "Luxury Wedding Planner Portugal",
-      "description": "Premium wedding planning and venue curation in Portugal for Canadian couples. Specialized in destination weddings, luxury venue scouting, and full event coordination.",
-      "url": "https://www.staceymarquezweddings.com",
-      "telephone": "+351912580628",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "PT"
-      },
-      "areaServed": [
-        {"@type": "Country", "name": "Canada"},
-        {"@type": "Country", "name": "Portugal"}
-      ],
-      "knowsAbout": ["Wedding Venues Portugal", "Luxury Weddings Portugal", "Destination Weddings Portugal", "Wedding Planning Portugal"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Wedding Planning Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Luxury Wedding Venue Scouting Portugal"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Destination Wedding Planning Portugal"
-            }
-          }
-        ]
-      },
-      "priceRange": "$$$",
-      "sameAs": [
-        "https://www.instagram.com/staceymarquez.weddings/"
-      ]
-    }
-    </script>
-
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied',
-        'wait_for_update': 500
-      });
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
-    <script>
-      gtag('js', new Date());
-      gtag('config', 'G-GQ0VPE0KMT');
-    </script>
+    <meta name="description" content="Ready to begin your love story in Portugal? Contact Stacey Marquez Weddings for a personalized consultation.">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -74,11 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
 
     <style>
-        /* NOTA 4: DESIGN - ESTILOS BASE */
         :root {
             --bg: #f4f2f0;
-            --text-dark: #33312e;
-            --accent: #6b5f54;
+            --text-dark: #2a2622;
+            --accent: #5a534c;
+            --gold: #b89f7e;
             --ease: cubic-bezier(0.19, 1, 0.22, 1);
             --transition: all 0.6s var(--ease);
         }
@@ -89,15 +27,17 @@
             background-color: var(--bg);
             color: var(--text-dark);
             font-family: 'Montserrat', sans-serif;
-            overflow: hidden;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* NAVEGAÇÃO */
+        body.menu-open { overflow: hidden; }
+
+        /* NAVEGAÇÃO PADRONIZADA (IGUAL A TODAS AS PÁGINAS) */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
-            padding: 10px 60px;
+            padding: 20px 60px;
             z-index: 3000;
             display: flex;
             justify-content: space-between;
@@ -105,36 +45,18 @@
             transition: var(--transition);
         }
 
-        .logo-img {
-            height: clamp(40px, 5vw, 65px);
-            width: auto;
-            filter: brightness(0.2);
-            transition: var(--transition);
+        header.scrolled {
+            padding: 15px 60px;
+            background: rgba(244, 242, 240, 0.95);
+            backdrop-filter: blur(15px);
         }
 
-        .header-right { display: flex; align-items: center; gap: clamp(20px, 4vw, 50px); }
+        .logo-img { height: 65px; width: auto; filter: brightness(0.2); transition: var(--transition); }
+        .header-right { display: flex; align-items: center; gap: 30px; }
+        .instagram-icon { width: 24px; height: 24px; filter: brightness(0.2); transition: var(--transition); }
 
-        .instagram-icon {
-            width: 24px; height: 24px;
-            filter: brightness(0.2);
-            transition: var(--transition);
-        }
-
-        .menu-toggle {
-            width: 44px; height: 44px;
-            cursor: pointer;
-            position: relative;
-            display: flex; align-items: center; justify-content: center;
-            z-index: 4000;
-        }
-
-        .menu-toggle span {
-            position: absolute;
-            width: 30px; height: 1px;
-            background: var(--text-dark);
-            transition: var(--transition);
-        }
-
+        .menu-toggle { width: 44px; height: 44px; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; z-index: 4000; }
+        .menu-toggle span { position: absolute; width: 30px; height: 1px; background: var(--text-dark); transition: var(--transition); }
         .menu-toggle span:nth-child(1) { transform: translateY(-8px); }
         .menu-toggle span:nth-child(2) { width: 20px; margin-left: 10px; }
         .menu-toggle span:nth-child(3) { transform: translateY(8px); }
@@ -143,6 +65,7 @@
         .menu-toggle.active span:nth-child(2) { opacity: 0; }
         .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(0); }
 
+        /* MENU OVERLAY */
         .menu-overlay {
             position: fixed; inset: 0;
             background: var(--bg);
@@ -153,24 +76,15 @@
         }
 
         .menu-overlay.active { opacity: 1; visibility: visible; }
-        .menu-overlay nav a {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(21px, 4.2vw, 33.6px);
-            color: var(--text-dark);
-            text-decoration: none;
-            display: block;
-            margin: 25px 0;
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            transition: var(--transition);
-            text-align: center;
-        }
+        .menu-overlay nav ul { list-style: none; text-align: center; }
+        .menu-overlay nav li { margin: 25px 0; }
+        .menu-overlay nav a { font-size: 24px; color: var(--text-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 6px; transition: var(--transition); }
 
         /* LAYOUT PRINCIPAL */
-        main { display: flex; height: 100vh; width: 100vw; }
-        .image-side { width: 66.66%; height: 100vh; overflow: hidden; position: relative; }
-        .image-side img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
-        .content-side { width: 33.34%; background-color: var(--bg); padding: 80px 5%; display: flex; flex-direction: column; justify-content: center; position: relative; }
+        main { display: flex; min-height: 100vh; width: 100%; }
+        .image-side { width: 66.66%; height: 100vh; position: sticky; top: 0; overflow: hidden; }
+        .image-side img { width: 100%; height: 100%; object-fit: cover; }
+        .content-side { width: 33.34%; background-color: var(--bg); padding: 140px 5% 80px; display: flex; flex-direction: column; justify-content: center; }
 
         h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; font-style: italic; line-height: 1; margin-bottom: 40px; letter-spacing: -1px; }
 
@@ -180,29 +94,20 @@
         textarea { min-height: 100px; resize: none; }
 
         button { margin-top: 20px; padding: 20px; background: var(--text-dark); border: none; color: #fff; text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; cursor: pointer; transition: 0.4s; }
-        button:hover { opacity: 0.8; transform: translateY(-2px); }
+        button:hover { opacity: 0.8; }
 
         .direct-contact { margin-top: 50px; font-size: 0.8rem; letter-spacing: 1px; line-height: 2.2; }
         .direct-contact a { color: var(--text-dark); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); transition: 0.3s; }
 
-        /* BANNER COOKIES */
-        #cookie-banner {
-            position: fixed; bottom: 20px; left: 20px; right: 20px; 
-            background: #fff; color: #33312e; padding: 20px; 
-            z-index: 9999; border: 1px solid rgba(0,0,0,0.1); 
-            display: flex; justify-content: space-between; align-items: center; 
-            font-size: 0.75rem; letter-spacing: 1px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 10px; 
-            visibility: hidden; opacity: 0; transition: 0.5s ease;
-        }
-
+        /* MEDIA QUERY UNIFICADA (MOBILE CORRECTION) */
         @media (max-width: 1100px) {
-            main { flex-direction: column; overflow-y: auto; }
-            .image-side { width: 100%; height: 40vh; }
-            .content-side { width: 100%; height: auto; padding: 60px 30px; }
-            body { overflow-y: auto; }
-            header { padding: 20px 30px; }
-            #cookie-banner { flex-direction: column; text-align: center; gap: 15px; bottom: 10px; left: 10px; right: 10px; }
+            header, header.scrolled { padding: 15px 25px; }
+            .header-right { gap: 20px; }
+            .logo-img { height: 45px; }
+
+            main { flex-direction: column; }
+            .image-side { width: 100%; height: 40vh; position: relative; }
+            .content-side { width: 100%; padding: 60px 30px; text-align: center; }
         }
 
         .reveal { opacity: 0; animation: revealUp 1.4s var(--ease) forwards; }
@@ -214,34 +119,32 @@
     <header id="header">
         <a href="index.html"><img src="logo.png" alt="Stacey Marquez Weddings" class="logo-img"></a>
         <div class="header-right">
-            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank" rel="noopener">
-                <img src="instagram.png" alt="Instagram" class="instagram-icon">
-            </a>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span><span></span><span></span>
-            </div>
+            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank"><img src="instagram.png" alt="Instagram" class="instagram-icon"></a>
+            <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
         </div>
     </header>
 
     <div class="menu-overlay" id="menuOverlay">
         <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="contacts.html">Contacts</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
         </nav>
     </div>
 
     <main>
         <div class="image-side">
-            <img src="contact.jpg" alt="Get in touch for luxury wedding planning in Portugal" id="hero-img">
+            <img src="contact.jpg" alt="Get in touch">
         </div>
         <div class="content-side">
             <h1 class="reveal">Let's chat.</h1>
             <form action="https://formspree.io/f/mykjynba" method="POST" class="reveal" style="animation-delay: 0.2s;">
-                <div class="input-group"><input type="text" name="name" placeholder="Full Name" required></div>
-                <div class="input-group"><input type="email" name="email" placeholder="Email Address" required></div>
-                <div class="input-group"><textarea name="message" placeholder="Tell us about your celebration..." required></textarea></div>
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <textarea name="message" placeholder="Tell us about your celebration..." required></textarea>
                 <button type="submit">Send Inquiry</button>
             </form>
             <div class="direct-contact reveal" style="animation-delay: 0.4s;">
@@ -251,53 +154,20 @@
         </div>
     </main>
 
-    <div id="cookie-banner">
-        <div style="padding-right: 20px;">This website uses cookies to enhance your experience.</div>
-        <div style="display: flex; gap: 10px;">
-            <button onclick="acceptCookies()" style="background: #33312e; color: #fff; border: none; padding: 10px 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 0.6rem; border-radius: 5px;">Accept</button>
-            <button onclick="hideBanner()" style="background: transparent; color: #33312e; border: 1px solid #33312e; padding: 10px 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 0.6rem; border-radius: 5px;">Decline</button>
-        </div>
-    </div>
-
     <script>
-        // NOTA 6: JAVASCRIPT - MENU
         const menuToggle = document.getElementById('menuToggle');
         const menuOverlay = document.getElementById('menuOverlay');
         const body = document.getElementById('body');
 
         menuToggle.addEventListener('click', () => {
-            const active = menuToggle.classList.toggle('active');
+            menuToggle.classList.toggle('active');
             menuOverlay.classList.toggle('active');
             body.classList.toggle('menu-open');
         });
 
-        // NOTA 7: JAVASCRIPT - REVELAÇÃO E COOKIES
-        window.addEventListener('load', () => {
-            document.getElementById('hero-img').style.transform = 'scale(1.05)';
-            if (!localStorage.getItem('cookieConsent')) {
-                const banner = document.getElementById('cookie-banner');
-                banner.style.visibility = 'visible';
-                banner.style.opacity = '1';
-            }
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         });
-
-        function acceptCookies() {
-            gtag('consent', 'update', {
-                'analytics_storage': 'granted',
-                'ad_storage': 'granted'
-            });
-            localStorage.setItem('cookieConsent', 'accepted');
-            hideBanner();
-        }
-
-        function hideBanner() {
-            const banner = document.getElementById('cookie-banner');
-            banner.style.opacity = '0';
-            setTimeout(() => { banner.style.visibility = 'hidden'; }, 500);
-            if (!localStorage.getItem('cookieConsent')) {
-                localStorage.setItem('cookieConsent', 'declined');
-            }
-        }
     </script>
 </body>
 </html>

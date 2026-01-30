@@ -2,72 +2,7 @@
 <html lang="en-CA">
 <head>
     <title>Luxury Wedding Planner Portugal | Destination Weddings for Canadians</title>
-    <meta name="description" content="Planning a luxury destination wedding in Portugal from Canada? Specialist Stacey Marquez offers bespoke venue scouting and full coordination for Canadian couples.">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WeddingService",
-      "name": "Stacey Marquez Weddings",
-      "alternateName": "Luxury Wedding Planner Portugal",
-      "description": "Premium wedding planning and venue curation in Portugal for Canadian couples. Specialized in luxury venue scouting and international coordination.",
-      "url": "https://www.staceymarquezweddings.com",
-      "telephone": "+351912580628",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "PT"
-      },
-      "areaServed": [
-        {"@type": "Country", "name": "Canada"},
-        {"@type": "Country", "name": "Portugal"}
-      ],
-      "knowsAbout": ["Wedding Venues Portugal", "Luxury Weddings Portugal", "Destination Weddings Portugal", "Wedding Planning Portugal"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Wedding Planning Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Luxury Wedding Venue Scouting Portugal"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Destination Wedding Planning Portugal"
-            }
-          }
-        ]
-      },
-      "priceRange": "$$$",
-      "sameAs": [
-        "https://www.instagram.com/staceymarquez.weddings/"
-      ]
-    }
-    </script>
-
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-
-      // Bloqueia cookies por defeito até o utilizador clicar em "Accept"
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied',
-        'wait_for_update': 500
-      });
-    </script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
-    <script>
-      gtag('js', new Date());
-      gtag('config', 'G-GQ0VPE0KMT');
-    </script>
+    <meta name="description" content="Planning a luxury destination wedding in Portugal from Canada? Specialist Stacey Marquez offers bespoke venue scouting and full coordination.">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -75,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
     
     <style>
-        /* NOTA 4: DESIGN - ESTILOS BASE */
+        /* ESTILOS BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
             --bg-neutral: #f4f2f0;
-            --text-dark: #33312e;
+            --text-dark: #2a2622;
             --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
@@ -94,11 +29,11 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* NAVEGAÇÃO */
+        /* NAVEGAÇÃO PADRONIZADA (CORREÇÃO DE ALINHAMENTO) */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
-            padding: 10px 60px;
+            padding: 20px 60px; /* Padding Desktop */
             z-index: 3000;
             display: flex;
             justify-content: space-between;
@@ -107,14 +42,14 @@
         }
 
         header.scrolled {
-            padding: 8px 60px;
+            padding: 15px 60px;
             background: rgba(244, 242, 240, 0.95);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
         }
 
         .logo-img {
-            height: clamp(40px, 5vw, 65px);
+            height: 65px; /* Altura fixa para evitar saltos */
             width: auto;
             max-width: 280px;
             filter: brightness(0) invert(1);
@@ -124,7 +59,7 @@
         .header-right {
             display: flex;
             align-items: center;
-            gap: clamp(20px, 4vw, 50px);
+            gap: 30px; /* Gap fixo */
         }
 
         .instagram-icon {
@@ -132,8 +67,6 @@
             transition: var(--transition);
             filter: brightness(0) invert(1);
         }
-
-        .instagram-icon:hover { transform: translateY(-3px); }
 
         .menu-toggle {
             width: 44px; height: 44px;
@@ -154,6 +87,7 @@
         .menu-toggle span:nth-child(2) { width: 20px; margin-left: 10px; }
         .menu-toggle span:nth-child(3) { transform: translateY(8px); }
 
+        /* ESTADOS DE COR (SCROLLED / MENU OPEN) */
         header.scrolled .logo-img,
         body.menu-open .logo-img,
         header.scrolled .instagram-icon,
@@ -170,6 +104,7 @@
         .menu-toggle.active span:nth-child(2) { opacity: 0; }
         .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(0); }
 
+        /* MENU OVERLAY */
         .menu-overlay {
             position: fixed; inset: 0;
             background: var(--bg-neutral);
@@ -182,10 +117,9 @@
         .menu-overlay.active { opacity: 1; visibility: visible; }
         .menu-overlay nav ul { list-style: none; text-align: center; }
         .menu-overlay nav li { margin: 25px 0; }
-        
         .menu-overlay nav a {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(20px, 4vw, 32px);
+            font-size: 24px;
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 300;
@@ -194,13 +128,11 @@
             transition: var(--transition);
         }
 
-        .menu-overlay nav a:hover { opacity: 0.5; letter-spacing: 10px; }
-
         /* HERO SECTION */
         #home {
             position: relative;
-            height: 100dvh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
                         url('weddingsite.jpg') center/cover no-repeat;
             display: flex; 
             align-items: center; 
@@ -208,48 +140,47 @@
         }
 
         .hero-content {
-            position: relative; z-index: 2;
             text-align: center;
             padding: 0 25px;
         }
 
         .slogan {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(28px, 5vw, 56px);
+            font-size: clamp(32px, 6vw, 64px);
             font-style: italic;
             font-weight: 300;
-            line-height: 1.2;
-            max-width: 900px;
+            line-height: 1.1;
             color: #fff;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.4);
             margin-bottom: 15px;
         }
 
         .sub-slogan {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(12px, 2vw, 16px);
+            font-size: 14px;
             font-weight: 300;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             color: rgba(255, 255, 255, 0.9);
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        /* BANNER COOKIES */
+        /* COOKIE BANNER */
         #cookie-banner {
             position: fixed; bottom: 20px; left: 20px; right: 20px; 
-            background: #fff; color: #33312e; padding: 20px; 
-            z-index: 9999; border: 1px solid rgba(0,0,0,0.1); 
-            display: flex; justify-content: space-between; align-items: center; 
-            font-size: 0.75rem; letter-spacing: 1px; 
+            background: #fff; padding: 20px; 
+            z-index: 9999; display: flex; justify-content: space-between; align-items: center; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 10px; 
             visibility: hidden; opacity: 0; transition: 0.5s ease;
         }
 
-        @media (max-width: 768px) {
-            header { padding: 10px 25px; }
-            header.scrolled { padding: 8px 25px; }
-            #cookie-banner { flex-direction: column; text-align: center; gap: 15px; bottom: 10px; left: 10px; right: 10px; }
+        /* MEDIA QUERY UNIFICADA (CORREÇÃO MOBILE) */
+        @media (max-width: 1100px) {
+            header, header.scrolled { 
+                padding: 15px 25px; /* Alinhamento fixo em todas as páginas */
+            }
+            .header-right { gap: 20px; }
+            .logo-img { height: 45px; } /* Tamanho fixo do logo no mobile */
+            
+            #cookie-banner { flex-direction: column; text-align: center; gap: 15px; }
         }
     </style>
 </head>
@@ -288,17 +219,13 @@
     </section>
 
     <div id="cookie-banner">
-        <div style="padding-right: 20px;">
-            This website uses cookies to enhance your experience.
-        </div>
+        <div style="font-size: 12px; letter-spacing: 1px;">This website uses cookies to enhance your experience.</div>
         <div style="display: flex; gap: 10px;">
-            <button onclick="acceptCookies()" style="background: #33312e; color: #fff; border: none; padding: 10px 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 0.6rem; border-radius: 5px;">Accept</button>
-            <button onclick="hideBanner()" style="background: transparent; color: #33312e; border: 1px solid #33312e; padding: 10px 20px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 0.6rem; border-radius: 5px;">Decline</button>
+            <button onclick="acceptCookies()" style="background: #33312e; color: #fff; border: none; padding: 10px 20px; cursor: pointer; text-transform: uppercase; font-size: 10px; border-radius: 5px;">Accept</button>
         </div>
     </div>
 
     <script>
-        // NOTA 6: JAVASCRIPT - MENU
         const menuToggle = document.getElementById('menuToggle');
         const menuOverlay = document.getElementById('menuOverlay');
         const body = document.getElementById('body');
@@ -307,14 +234,12 @@
             const active = menuToggle.classList.toggle('active');
             menuOverlay.classList.toggle('active');
             body.classList.toggle('menu-open');
-            body.style.overflow = active ? 'hidden' : '';
         });
 
         window.addEventListener('scroll', () => {
             document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // NOTA 7: JAVASCRIPT - LOGICA DE CONSENTIMENTO (Atualiza o GA4 quando aceitam cookies)
         window.addEventListener('load', function() {
             if (!localStorage.getItem('cookieConsent')) {
                 const banner = document.getElementById('cookie-banner');
@@ -324,21 +249,10 @@
         });
 
         function acceptCookies() {
-            gtag('consent', 'update', {
-                'analytics_storage': 'granted',
-                'ad_storage': 'granted'
-            });
             localStorage.setItem('cookieConsent', 'accepted');
-            hideBanner();
-        }
-
-        function hideBanner() {
             const banner = document.getElementById('cookie-banner');
             banner.style.opacity = '0';
             setTimeout(() => { banner.style.visibility = 'hidden'; }, 500);
-            if (!localStorage.getItem('cookieConsent')) {
-                localStorage.setItem('cookieConsent', 'declined');
-            }
         }
     </script>
 </body>
