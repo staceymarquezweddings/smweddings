@@ -1,8 +1,32 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
-    <title>Contact Stacey Marquez | Start Planning Your Portugal Wedding</title>
-    <meta name="description" content="Ready to begin your love story in Portugal? Contact Stacey Marquez Weddings for a personalized consultation.">
+    <title>Contact Stacey Marquez | Start Planning Your Wedding in Portugal</title>
+    <meta name="description" content="Ready to find the perfect wedding venue in Portugal? Contact Stacey Marquez Weddings for a personalized consultation and venue scouting inquiry.">
+    <meta name="keywords" content="contact wedding planner portugal, wedding inquiry portugal, stacey marquez weddings contact, destination wedding consultation">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "WeddingService",
+        "name": "Stacey Marquez Weddings",
+        "telephone": "+351912580628",
+        "email": "stacey_marquez@hotmail.com",
+        "areaServed": "Portugal",
+        "description": "Bespoke wedding planning and venue scouting services in Portugal."
+      }
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GQ0VPE0KMT');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -33,7 +57,6 @@
 
         body.menu-open { overflow: hidden; }
 
-        /* NAVEGAÇÃO PADRONIZADA (IGUAL A TODAS AS PÁGINAS) */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -65,7 +88,6 @@
         .menu-toggle.active span:nth-child(2) { opacity: 0; }
         .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(0); }
 
-        /* MENU OVERLAY */
         .menu-overlay {
             position: fixed; inset: 0;
             background: var(--bg);
@@ -80,13 +102,12 @@
         .menu-overlay nav li { margin: 25px 0; }
         .menu-overlay nav a { font-size: 24px; color: var(--text-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 6px; transition: var(--transition); }
 
-        /* LAYOUT PRINCIPAL */
         main { display: flex; min-height: 100vh; width: 100%; }
         .image-side { width: 66.66%; height: 100vh; position: sticky; top: 0; overflow: hidden; }
         .image-side img { width: 100%; height: 100%; object-fit: cover; }
         .content-side { width: 33.34%; background-color: var(--bg); padding: 140px 5% 80px; display: flex; flex-direction: column; justify-content: center; }
 
-        h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; font-style: italic; line-height: 1; margin-bottom: 40px; letter-spacing: -1px; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; font-style: italic; line-height: 1; margin-bottom: 40px; letter-spacing: -1px; text-align: left; }
 
         form { display: flex; flex-direction: column; gap: 20px; }
         input, textarea { width: 100%; padding: 15px 0; background: transparent; border: none; border-bottom: 1px solid rgba(0,0,0,0.1); font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--text-dark); transition: 0.4s; }
@@ -96,18 +117,17 @@
         button { margin-top: 20px; padding: 20px; background: var(--text-dark); border: none; color: #fff; text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; cursor: pointer; transition: 0.4s; }
         button:hover { opacity: 0.8; }
 
-        .direct-contact { margin-top: 50px; font-size: 0.8rem; letter-spacing: 1px; line-height: 2.2; }
+        .direct-contact { margin-top: 50px; font-size: 0.8rem; letter-spacing: 1px; line-height: 2.2; text-align: center; } 
         .direct-contact a { color: var(--text-dark); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); transition: 0.3s; }
 
-        /* MEDIA QUERY UNIFICADA (MOBILE CORRECTION) */
         @media (max-width: 1100px) {
             header, header.scrolled { padding: 15px 25px; }
             .header-right { gap: 20px; }
             .logo-img { height: 45px; }
-
             main { flex-direction: column; }
             .image-side { width: 100%; height: 40vh; position: relative; }
             .content-side { width: 100%; padding: 60px 30px; text-align: center; }
+            h1 { text-align: center; }
         }
 
         .reveal { opacity: 0; animation: revealUp 1.4s var(--ease) forwards; }
@@ -117,9 +137,13 @@
 <body id="body">
 
     <header id="header">
-        <a href="index.html"><img src="logo.png" alt="Stacey Marquez Weddings" class="logo-img"></a>
+        <a href="index.html">
+            <img src="logo.png" alt="Stacey Marquez Weddings - Contact for Luxury Portugal Venues" class="logo-img">
+        </a>
         <div class="header-right">
-            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank"><img src="instagram.png" alt="Instagram" class="instagram-icon"></a>
+            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank">
+                <img src="instagram.png" alt="Stacey Marquez Instagram - Wedding Venue Inspiration Portugal" class="instagram-icon">
+            </a>
             <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
         </div>
     </header>
@@ -137,15 +161,16 @@
 
     <main>
         <div class="image-side">
-            <img src="contact.jpg" alt="Get in touch">
+            <img src="contact.jpg" alt="Inquire about luxury wedding venues and planning in Portugal">
         </div>
         <div class="content-side">
-            <h1 class="reveal">Let's chat.</h1>
+            <h1 class="reveal">Let's chat</h1>
             <form action="https://formspree.io/f/mykjynba" method="POST" class="reveal" style="animation-delay: 0.2s;">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <textarea name="message" placeholder="Tell us about your celebration..." required></textarea>
-                <button type="submit">Send Inquiry</button>
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="tel" name="phone" placeholder="Phone Number">
+                <textarea name="message" placeholder="Give us all the details" required></textarea>
+                <button type="submit">Send</button>
             </form>
             <div class="direct-contact reveal" style="animation-delay: 0.4s;">
                 <p><a href="https://wa.me/351912580628" target="_blank">+351 912 580 628</a></p>

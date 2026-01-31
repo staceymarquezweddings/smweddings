@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
+    <title>About Stacey Marquez | Luxury Wedding Venue Expert in Portugal</title>
+    <meta name="description" content="Meet Stacey Marquez, a luxury wedding curator with 15 years of experience. Specialist in finding the most exclusive wedding venues in Portugal for international couples.">
+    <meta name="keywords" content="stacey marquez, wedding planner portugal, luxury wedding venues portugal, venue scouting portugal, destination weddings lisbon, wedding expert portugal">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Stacey Marquez",
+      "jobTitle": "Luxury Wedding Planner & Venue Specialist",
+      "description": "Expert in corporate events, luxury travel, and bespoke wedding venues in Portugal.",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Stacey Marquez Weddings"
+      },
+      "knowsAbout": ["Wedding Planning", "Luxury Travel", "Wedding Venues in Portugal", "Event Management"]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GQ0VPE0KMT');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>About Stacey Marquez | Luxury Wedding Curator in Portugal</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +58,6 @@
 
         body.menu-open { overflow: hidden; }
 
-        /* NAVEGAÇÃO PADRONIZADA (IGUAL AO INDEX) */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -93,7 +118,6 @@
         .menu-toggle.active span:nth-child(2) { opacity: 0; }
         .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(0); }
 
-        /* MENU OVERLAY */
         .menu-overlay {
             position: fixed; inset: 0;
             background: var(--bg);
@@ -116,7 +140,6 @@
             transition: var(--transition);
         }
 
-        /* LAYOUT */
         main { display: flex; min-height: 100vh; width: 100%; }
         
         .image-side { width: 66.66%; height: 100vh; position: sticky; top: 0; overflow: hidden; }
@@ -124,32 +147,31 @@
         
         .content-side { width: 33.34%; padding: 140px 5% 80px; display: flex; flex-direction: column; justify-content: center; background-color: var(--bg); }
 
-        .intro-label { font-size: 0.68rem; letter-spacing: 5px; text-transform: uppercase; color: var(--accent); margin-bottom: 25px; display: block; }
-        h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.1rem, 4.2vw, 3.36rem); font-weight: 300; font-style: italic; line-height: 1.1; margin-bottom: 50px; letter-spacing: -1px; color: var(--text-dark); }
+        /* REVERSÃO PARA A FONTE CORMORANT GARAMOND */
+        h1 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: clamp(2.1rem, 4.2vw, 3.36rem); 
+            font-weight: 300; 
+            font-style: italic; 
+            line-height: 1.1; 
+            margin-bottom: 50px; 
+            letter-spacing: -1px; 
+            color: var(--text-dark); 
+        }
+
         .bio-text { display: flex; flex-direction: column; }
         .bio-text p { font-size: 1rem; line-height: 2; font-weight: 300; margin-bottom: 30px; color: var(--text); }
         
-        .social-link { align-self: center; display: inline-block; margin-bottom: 40px; text-decoration: none; color: var(--text-dark); font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; border-bottom: 1px solid rgba(26,26,26,0.3); padding-bottom: 5px; transition: 0.3s; }
+        .social-link { align-self: center; display: inline-block; margin-top: 40px; margin-bottom: 20px; text-decoration: none; color: var(--text-dark); font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; border-bottom: 1px solid rgba(26,26,26,0.3); padding-bottom: 5px; transition: 0.3s; }
 
-        /* ASSINATURA */
-        .personal-signature { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 20px; width: 100%; }
-        .ring-canvas { position: relative; width: 70px; height: 70px; display: flex; justify-content: center; align-items: center; }
-        .band { position: absolute; width: 60px; height: 60px; border: 4px solid var(--gold); border-radius: 50%; }
-        .heart-cut { position: relative; width: 24px; height: 20px; background: linear-gradient(135deg, #ff4d6d 0%, #c9184a 100%); clip-path: polygon(50% 15%, 80% 0%, 100% 20%, 100% 50%, 50% 90%, 0% 50%, 0% 20%, 20% 0%); animation: heart-beat-rhythm 1.5s ease-in-out infinite; }
-        .with-love-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--text-dark); }
-        .brand-logo-signature { width: 180px; height: auto; filter: brightness(0.1); }
-
-        @keyframes heart-beat-rhythm { 0%, 28%, 70%, 100% { transform: scale(1); } 14%, 42% { transform: scale(1.2); } }
-
-        /* MEDIA QUERY UNIFICADA (CORREÇÃO MOBILE IGUAL AO INDEX) */
         @media (max-width: 1100px) {
             header, header.scrolled { padding: 15px 25px; }
             .header-right { gap: 20px; }
             .logo-img { height: 45px; }
-
             main { flex-direction: column; }
             .image-side { width: 100%; height: 55vh; position: relative; }
             .content-side { width: 100%; padding: 60px 30px; align-items: center; text-align: center; }
+            h1 { text-align: center; }
         }
 
         .reveal { opacity: 0; animation: revealUp 1.4s var(--ease) forwards; }
@@ -159,9 +181,13 @@
 <body id="body">
 
     <header id="header">
-        <a href="index.html"><img src="logo.png" alt="Stacey Marquez Weddings" class="logo-img"></a>
+        <a href="index.html">
+            <img src="logo.png" alt="Stacey Marquez Weddings - Specialist in Wedding Venues in Portugal" class="logo-img">
+        </a>
         <div class="header-right">
-            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank"><img src="instagram.png" alt="Instagram" class="instagram-icon"></a>
+            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank">
+                <img src="instagram.png" alt="Stacey Marquez Instagram - Destination Wedding Insights" class="instagram-icon">
+            </a>
             <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
         </div>
     </header>
@@ -178,20 +204,17 @@
     </div>
 
     <main>
-        <div class="image-side"><img src="about.jpg" alt="Stacey Marquez"></div>
+        <div class="image-side">
+            <img src="about.jpg" alt="Stacey Marquez - Luxury Wedding Planner and Venue Expert in Portugal">
+        </div>
         <div class="content-side">
-            <span class="intro-label reveal">The Story</span>
             <h1 class="reveal" style="animation-delay: 0.2s;">Let me introduce myself</h1>
             <div class="bio-text reveal" style="animation-delay: 0.4s;">
-                <p>With over 15 years of experience in international corporate events and luxury travel, I have channeled that precision into my true passion: creating unforgettable weddings in Portugal.</p>
-                <p>I will be your guide and confidante. My approach combines technical management with an aesthetic sensibility, ensuring every detail reflects your vision while respecting the harmony of your budget.</p>
-                <p>Together, we will sculpt a celebration that is as unique and profound as your own love story, leaving you with complete peace of mind throughout the journey.</p>
-                <a href="https://www.instagram.com/staceymarquez.weddings/" class="social-link" target="_blank">Follow the process on Instagram</a>
-                <div class="personal-signature">
-                    <div class="ring-canvas"><div class="heart-cut"></div><div class="band"></div></div>
-                    <span class="with-love-text">With love,</span>
-                    <img src="staceyassinaturasiteblack.png" alt="Signature" class="brand-logo-signature">
-                </div>
+                <p>With over 15 years experience in international corporate events, incentives, conferences and luxury travel, I have channeled that precision into my true passion: planning unforgettable weddings in Portugal!</p>
+                <p>From the moment we start, I’ll be by your side to bring your dream wedding to life. My hands-on guidance ensures that every detail is perfectly tailored to your vision, all while respecting your budget.</p>
+                <p>Together, we will create a celebration that’s as unique and beautiful as your love story, leaving you with complete peace of mind throughout the entire journey.</p>
+                
+                <a href="https://www.instagram.com/staceymarquez.weddings/" class="social-link" target="_blank">Follow us on Instagram</a>
             </div>
         </div>
     </main>
