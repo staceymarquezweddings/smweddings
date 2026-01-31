@@ -147,10 +147,9 @@
         
         .content-side { width: 33.34%; padding: 140px 5% 80px; display: flex; flex-direction: column; justify-content: center; background-color: var(--bg); }
 
-        /* REVERSÃO PARA A FONTE CORMORANT GARAMOND */
         h1 { 
             font-family: 'Cormorant Garamond', serif; 
-            font-size: clamp(2.1rem, 4.2vw, 3.36rem); 
+            font-size: clamp(2rem, 3.5vw, 2.6rem); /* Reduzido significativamente para evitar quebra de linha */
             font-weight: 300; 
             font-style: italic; 
             line-height: 1.1; 
@@ -171,7 +170,7 @@
             main { flex-direction: column; }
             .image-side { width: 100%; height: 55vh; position: relative; }
             .content-side { width: 100%; padding: 60px 30px; align-items: center; text-align: center; }
-            h1 { text-align: center; }
+            h1 { text-align: center; font-size: 2.2rem; }
         }
 
         .reveal { opacity: 0; animation: revealUp 1.4s var(--ease) forwards; }

@@ -2,14 +2,41 @@
 <html lang="en-CA">
 <head>
     <title>Wedding Venue Scouting & Planning Services Portugal | Stacey Marquez</title>
-    <meta name="description" content="Discover premium wedding venues in Portugal. Specialized venue scouting, full planning, and coordination for Canadian couples.">
+    <meta name="description" content="Discover premium luxury wedding venues in Portugal. Specialized venue scouting, full planning, and multi-day coordination for international couples.">
+    <meta name="keywords" content="wedding venues in portugal, wedding planner portugal, venue scouting portugal, luxury wedding portugal, destination wedding planner, portugal wedding services">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Wedding Venue Scouting & Planning",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Stacey Marquez Weddings",
+        "url": "https://staceymarquezweddings.com"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Portugal"
+      },
+      "description": "Expert curation of the most exclusive wedding venues in Portugal and bespoke planning services."
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GQ0VPE0KMT');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -79,16 +106,27 @@
         .menu-overlay nav li { margin: 25px 0; }
         .menu-overlay nav a { font-size: 24px; color: var(--text-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 6px; }
 
-        /* INTRO SECTION */
         .intro-hero { display: flex; min-height: 80vh; margin-top: 80px; }
         .intro-image-side { width: 50%; height: 80vh; overflow: hidden; }
         .intro-image-side img { width: 100%; height: 100%; object-fit: cover; }
         .intro-text-side { width: 50%; padding: 0 8%; display: flex; flex-direction: column; justify-content: center; }
-        .intro-text-side span { font-size: 0.8rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
-        .intro-text-side h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 6vw, 5rem); font-weight: 400; line-height: 1.1; margin-bottom: 40px; color: var(--text-dark); }
+        
+        /* Font Montserrat (Light) usada aqui */
+        .intro-text-side span { font-size: 0.8rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 300; }
+        
+        /* Redução do tamanho do título para alinhar com o "Let's chat" */
+        .intro-text-side h1 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: clamp(1.8rem, 3vw, 2.4rem); 
+            font-weight: 300; 
+            font-style: italic; 
+            line-height: 1.1; 
+            margin-bottom: 40px; 
+            color: var(--text-dark); 
+        }
+        
         .intro-text-side p { font-size: 1.1rem; color: #5a534c; max-width: 500px; }
 
-        /* SERVICES GRID */
         .services-section { padding: 120px 6%; max-width: 1600px; margin: auto; }
         .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
         .service-card { background: var(--card); padding: 60px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid rgba(0,0,0,0.02); }
@@ -100,7 +138,6 @@
         .service-card li { padding-left: 1.5em; position: relative; }
         .service-card li::before { content: "•"; position: absolute; left: 0; color: var(--gold); }
 
-        /* TESTIMONIALS & CTA */
         .testimonials { padding: 80px 6%; text-align: center; background: #edeae7; }
         .testimonials h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 50px; }
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; max-width: 1200px; margin: auto; }
@@ -121,6 +158,7 @@
             .services-grid { grid-template-columns: 1fr; }
             .service-card { padding: 40px; }
             .service-card ul { grid-template-columns: 1fr; }
+            .intro-text-side h1 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -128,9 +166,13 @@
 <body id="body">
 
     <header id="header">
-        <a href="index.html"><img src="logo.png" alt="Stacey Marquez Weddings" class="logo-img"></a>
+        <a href="index.html">
+            <img src="logo.png" alt="Stacey Marquez Weddings - Premium Wedding Venues in Portugal" class="logo-img">
+        </a>
         <div class="header-right">
-            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank"><img src="instagram.png" alt="Instagram" class="instagram-icon"></a>
+            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank">
+                <img src="instagram.png" alt="Explore Exclusive Portugal Wedding Venues on Instagram" class="instagram-icon">
+            </a>
             <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
         </div>
     </header>
@@ -148,12 +190,12 @@
 
     <section class="intro-hero">
         <div class="intro-image-side reveal">
-            <img src="services.jpg" alt="Wedding Luxury Portugal">
+            <img src="services.jpg" alt="Luxury Wedding Venues in Portugal - Specialized Scouting Services">
         </div>
         <div class="intro-text-side reveal">
             <span>The Experience</span>
             <h1>Services</h1>
-            <p>From intimate elopements to grand multi-day celebrations, we design weddings that honour your story while embracing Portugal’s culture, landscapes, and elegance.</p>
+            <p>From intimate elopements to grand multi-day celebrations, we design weddings and curate the most exclusive **wedding venues in Portugal** that embrace culture and elegance.</p>
         </div>
     </section>
 
@@ -162,7 +204,7 @@
             <div class="service-card reveal">
                 <h3>Full Planning & Design</h3>
                 <div class="tagline">From vision to flawless reality.</div>
-                <p>The complete journey for couples seeking absolute peace of mind. Includes initial style and budget alignment, creative concept development with moodboards, and contract negotiation for all suppliers. We handle the venue scouting with visits to 3 curated locations and manage every logistical detail with total financial transparency.</p>
+                <p>The complete journey for couples seeking absolute peace of mind. Includes our signature **venue scouting in Portugal** with visits to 3 curated locations, ensuring the perfect backdrop for your story.</p>
                 <ul>
                     <li>Moodboards & Styling</li>
                     <li>Venue Scouting (3 visits)</li>
@@ -176,7 +218,7 @@
             <div class="service-card reveal">
                 <h3>Multi-Day Experience</h3>
                 <div class="tagline">A celebration that unfolds.</div>
-                <p>Specialized expertise in managing destination wedding journeys that span several days. From welcome dinners and rehearsal evenings to post-wedding brunches or themed sunset parties, we ensure every guest experience is seamless. We handle all logistics and guest activities, allowing you to focus solely on the celebration.</p>
+                <p>Specialized expertise in managing destination wedding journeys. We handle logistics for the best **wedding venues in Portugal**, from welcome dinners to post-wedding brunches.</p>
                 <ul>
                     <li>Welcome Dinners</li>
                     <li>Rehearsal Coordination</li>
@@ -190,7 +232,7 @@
             <div class="service-card reveal">
                 <h3>Bespoke Coordination</h3>
                 <div class="tagline">Grace under pressure.</div>
-                <p>For couples who have already planned their details but need expert execution. Includes a final online meeting and rehearsal to ensure every supplier and timeline is strictly followed. On the day, our onsite team manages all logistics and supplier supervision so you can be fully present.</p>
+                <p>Expert execution for your chosen **portuguese wedding venue**. Our onsite team manages all logistics and supplier supervision so you can be fully present.</p>
                 <ul>
                     <li>1 Online Briefing Meeting</li>
                     <li>Rehearsal Coordination</li>
@@ -202,7 +244,7 @@
             <div class="service-card reveal">
                 <h3>Expert Consulting</h3>
                 <div class="tagline">Clarity before commitment.</div>
-                <p>Need a professional second opinion? We offer specialized site inspections—planning visits for tastings, table settings, and decor. Alternatively, our **Online Consult (1.5h)** provides clarity on problem-solving, budget reduction strategies, and timeline guidance for those planning independently.</p>
+                <p>Professional site inspections for tastings and decor. Our Online Consult provides clarity on independent planning and choosing the right **wedding venues in Portugal**.</p>
                 <ul>
                     <li>1.5h Strategic Session</li>
                     <li>Budget Strategy</li>
