@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <title>Stories | Stacey Marquez Weddings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f4f2f0;
+            --text-dark: #1a1a1a;
+            --gold: #b89f7e;
+            --transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* HEADER PADRONIZADO */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            padding: 20px 60px; z-index: 3000;
+            display: flex; justify-content: space-between; align-items: center;
+            transition: var(--transition);
+        }
+        header.scrolled {
+            padding: 15px 60px;
+            background: rgba(244, 242, 240, 0.95);
+            backdrop-filter: blur(15px);
+        }
+        .logo-img { height: 65px; filter: brightness(0.2); transition: var(--transition); }
+        .header-right { display: flex; align-items: center; gap: 30px; }
+        .instagram-icon { width: 24px; filter: brightness(0.2); }
+
+        .menu-toggle { width: 44px; height: 44px; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; z-index: 4000; }
+        .menu-toggle span { position: absolute; width: 30px; height: 1px; background: var(--text-dark); transition: var(--transition); }
+        .menu-toggle span:nth-child(1) { transform: translateY(-8px); }
+        .menu-toggle span:nth-child(2) { width: 20px; margin-left: 10px; }
+        .menu-toggle span:nth-child(3) { transform: translateY(8px); }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(0); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(0); }
+
+        .menu-overlay {
+            position: fixed; inset: 0; background: var(--bg);
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; visibility: hidden; transition: opacity 0.5s ease; z-index: 2500;
+        }
+        .menu-overlay.active { opacity: 1; visibility: visible; }
+        .menu-overlay nav ul { list-style: none; text-align: center; }
+        .menu-overlay nav li { margin: 25px 0; }
+        .menu-overlay nav a { font-size: 24px; color: var(--text-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 6px; font-weight: 300; }
+
+        /* HERO */
+        .hero-stories { padding: 180px 60px 60px; text-align: center; }
+        .hero-stories span { font-size: 0.8rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: block; font-weight: 300; }
+        .hero-stories h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; font-style: italic; }
+
+        /* CAROUSEL STRUCTURE */
+        .story-section { padding-bottom: 120px; }
+        .story-header { padding: 0 60px 30px; }
+        .story-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; font-style: italic; }
+        .story-header p { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-top: 5px; }
+
+        .carousel-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 0 60px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            cursor: grab;
+        }
+        .carousel-wrapper::-webkit-scrollbar { display: none; }
+
+        .carousel-track { display: inline-flex; gap: 30px; }
+        
+        .carousel-item {
+            display: inline-block;
+            height: 65vh;
+            width: auto;
+            flex-shrink: 0;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .carousel-item img {
+            height: 100%;
+            width: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .carousel-item:hover img { transform: scale(1.05); }
+
+        /* FOOTER */
+        footer { background: #fff; padding: 120px 6% 60px; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); }
+        .footer-logo { height: 180px; filter: brightness(0.2); margin-bottom: 60px; }
+        .footer-credits { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: #999; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 60px; }
+
+        @media (max-width: 1100px) {
+            header, header.scrolled { padding: 15px 25px; }
+            .logo-img { height: 45px; }
+            .hero-stories { padding: 140px 25px 40px; }
+            .story-header { padding: 0 25px 20px; }
+            .carousel-wrapper { padding: 0 25px; }
+            .carousel-item { height: 45vh; }
+            .footer-logo { height: 100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <a href="index.html"><img src="logo.png" alt="Logo" class="logo-img"></a>
+        <div class="header-right">
+            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank"><img src="instagram.png" alt="" class="instagram-icon"></a>
+            <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="hero-stories">
+        <span>Curated Moments</span>
+        <h1>Love Stories</h1>
+    </section>
+
+    <section class="story-section">
+        <div class="story-header">
+            <h2>Emma & João</h2>
+            <p>Sintra, Portugal</p>
+        </div>
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <div class="carousel-item"><img src="nn1.jpg" alt=""></div>
+                <div class="carousel-item"><img src="nn2.jpg" alt=""></div>
+                <div class="carousel-item"><img src="nn3.jpg" alt=""></div>
+                <div class="carousel-item"><img src="nn4.jpg" alt=""></div>
+                <div class="carousel-item"><img src="nn5.jpg" alt=""></div>
+                <div class="carousel-item"><img src="nn6.jpg" alt=""></div>
+                <div class="carousel-item"><img src="nn7.jpg" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="story-header">
+            <h2>Sophia & Michael</h2>
+            <p>Algarve, Portugal</p>
+        </div>
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <div class="carousel-item"><img src="a1.jpg" alt=""></div>
+                <div class="carousel-item"><img src="a2.jpg" alt=""></div>
+                <div class="carousel-item"><img src="a3.jpg" alt=""></div>
+                <div class="carousel-item"><img src="a4.jpg" alt=""></div>
+                <div class="carousel-item"><img src="a5.jpg" alt=""></div>
+                <div class="carousel-item"><img src="a6.jpg" alt=""></div>
+                <div class="carousel-item"><img src="a7.jpg" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="story-header">
+            <h2>Isabella & Lucas</h2>
+            <p>Lisbon, Portugal</p>
+        </div>
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <div class="carousel-item"><img src="nn1.jpg" alt=""></div>
+                <div class="carousel-item"><img src="nn2.jpg" alt=""></div>
+                <div class="carousel-item"><img src="nn3.jpg" alt=""></div>
+                <div class="carousel-item"><img src="nn4.jpg" alt=""></div>
+                <div class="carousel-item"><img src="nn5.jpg" alt=""></div>
+                <div class="carousel-item"><img src="nn6.jpg" alt=""></div>
+                <div class="carousel-item"><img src="nn7.jpg" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="story-header">
+            <h2>Olivia & James</h2>
+            <p>Douro Valley, Portugal</p>
+        </div>
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <div class="carousel-item"><img src="a1.jpg" alt=""></div>
+                <div class="carousel-item"><img src="a2.jpg" alt=""></div>
+                <div class="carousel-item"><img src="a3.jpg" alt=""></div>
+                <div class="carousel-item"><img src="a4.jpg" alt=""></div>
+                <div class="carousel-item"><img src="a5.jpg" alt=""></div>
+                <div class="carousel-item"><img src="a6.jpg" alt=""></div>
+                <div class="carousel-item"><img src="a7.jpg" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="logo.png" alt="Stacey Marquez Weddings" class="footer-logo">
+        <div class="footer-credits">© 2026 Stacey Marquez Weddings | All Rights Reserved</div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = menuOverlay.classList.contains('active') ? 'hidden' : '';
+        });
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        const sliders = document.querySelectorAll('.carousel-wrapper');
+        sliders.forEach(slider => {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.style.cursor = 'grabbing';
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        });
+    </script>
+</body>
+</html>
