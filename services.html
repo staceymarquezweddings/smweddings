@@ -1,57 +1,55 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en-CA">
 <head>
-    <title>Serviços de Casamento em Portugal | Stacey Marquez Weddings</title>
-    <meta name="description" content="Descubra os nossos serviços de planeamento de casamentos de luxo em Portugal. Desde a coordenação do dia até ao planeamento completo e design de casamentos multi-dia.">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Planeamento de Casamentos e Coordenação",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Stacey Marquez Weddings",
-        "url": "https://staceymarquezweddings.com"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Portugal"
-      },
-      "description": "Serviços de planeamento de casamentos de luxo, curadoria de locais e coordenação de eventos em Portugal."
-    }
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GQ0VPE0KMT');
     </script>
 
+    <title>Bespoke Wedding Services in Portugal | Stacey Marquez Weddings</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
 
     <style>
+        @font-face {
+            font-family: 'TAN Aegean';
+            src: url('TAN - AEGEAN Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Blosta Script';
+            src: url('Blosta-Script.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         :root {
-            --bg: #f4f2f0;
-            --text: #2a2622;
+            --bg-neutral: #f4f2f0;
             --text-dark: #1a1a1a;
-            --gold: #b89f7e;
-            --card: #ffffff;
-            --shadow: 0 20px 60px rgba(0,0,0,0.08);
-            --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            --transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
+            background-color: var(--bg-neutral);
+            color: var(--text-dark);
             font-family: 'Montserrat', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.85;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        body.menu-open { overflow: hidden; }
-
+        /* --- HEADER --- */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -69,12 +67,37 @@
             backdrop-filter: blur(15px);
         }
 
-        .logo-img { height: 65px; width: auto; filter: brightness(0.2); transition: var(--transition); }
-        .header-right { display: flex; align-items: center; gap: 30px; }
-        .instagram-icon { width: 24px; height: 24px; filter: brightness(0.2); }
+        .logo-img {
+            height: 130px; 
+            width: auto;
+            max-width: 560px;
+            filter: brightness(0); /* Preto por defeito como pediste */
+            transition: var(--transition);
+        }
 
-        .menu-toggle { width: 44px; height: 44px; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; z-index: 4000; }
-        .menu-toggle span { position: absolute; width: 30px; height: 1px; background: var(--text-dark); transition: var(--transition); }
+        .header-right { display: flex; align-items: center; gap: 30px; }
+
+        .instagram-icon {
+            width: 24px; height: 24px;
+            filter: brightness(0);
+            transition: var(--transition);
+        }
+
+        .menu-toggle {
+            width: 44px; height: 44px;
+            cursor: pointer;
+            position: relative;
+            z-index: 4000;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .menu-toggle span {
+            position: absolute;
+            width: 30px; height: 1px;
+            background: #000000;
+            transition: var(--transition);
+        }
+
         .menu-toggle span:nth-child(1) { transform: translateY(-8px); }
         .menu-toggle span:nth-child(2) { width: 20px; margin-left: 10px; }
         .menu-toggle span:nth-child(3) { transform: translateY(8px); }
@@ -83,9 +106,10 @@
         .menu-toggle.active span:nth-child(2) { opacity: 0; }
         .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(0); }
 
+        /* --- MENU OVERLAY --- */
         .menu-overlay {
             position: fixed; inset: 0;
-            background: var(--bg);
+            background: var(--bg-neutral);
             display: flex; justify-content: center; align-items: center;
             opacity: 0; visibility: hidden;
             transition: opacity 0.5s ease;
@@ -94,252 +118,156 @@
         .menu-overlay.active { opacity: 1; visibility: visible; }
         .menu-overlay nav ul { list-style: none; text-align: center; }
         .menu-overlay nav li { margin: 25px 0; }
-        .menu-overlay nav a { font-size: 24px; color: var(--text-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 6px; }
-
-        /* --- SECÇÃO HERÓI GIGANTE (BASEADA NO EXEMPLO) --- */
-        .hero-section {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            filter: brightness(0.9);
-        }
-
-        .hero-content {
-            z-index: 2;
-            text-align: center;
-            color: #fff;
-            padding: 0 10%;
-        }
-
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 300;
-            line-height: 1.1;
-            margin-bottom: 10px;
-        }
-
-        .hero-content p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            font-weight: 200;
-            letter-spacing: 0.1em;
+        .menu-overlay nav a {
+            font-size: 24px;
+            color: var(--text-dark);
+            text-decoration: none;
             text-transform: uppercase;
+            letter-spacing: 6px;
         }
 
-        /* --- NOVA GRELHA DE SERVIÇOS MINIMALISTA (BASEADA NO EXEMPLO) --- */
-        .services-section {
-            padding: 120px 0; /* Remover padding lateral */
-            background: var(--bg);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            max-width: 100%; /* Ocupar toda a largura */
-            margin: auto;
-            border-top: 1px solid rgba(0,0,0,0.05); /* Linha divisória fina */
-        }
-
-        /* Cartões de serviço baseados em texto */
-        .service-card {
-            background: var(--bg); /* Fundo igual ao do site */
-            padding: 80px; /* Mais espaço interno */
-            transition: var(--transition);
-            border-bottom: 1px solid rgba(0,0,0,0.05); /* Linha divisória fina */
+        /* --- HERO --- */
+        .hero {
+            height: 70vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Alinhamento editorial */
-        }
-
-        /* Efeito de hover suave no texto, não no card */
-        .service-card h3, .service-card p, .service-card ul {
-            transition: var(--transition);
-        }
-        .service-card:hover h3 { color: var(--gold); }
-
-        .service-number {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 6vw, 4.5rem); /* Grande */
-            font-weight: 300;
-            color: var(--text-dark);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-        .service-number::after {
-            content: ".";
-            display: inline-block;
-            margin-left: 5px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            color: var(--text-dark);
-            font-weight: 300;
-        }
-
-        .service-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 3.5vw, 2.4rem); /* Maior e mais editorial */
-            font-weight: 500;
-            margin-bottom: 1em;
-            color: var(--text-dark);
-            line-height: 1.2;
-        }
-
-        .service-card p {
-            font-size: 1.1rem;
-            color: #4f4841;
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
-
-        .service-card ul {
-            list-style: none;
-            font-size: 1rem;
-            color: #4f4841;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adaptável */
-            gap: 15px;
-            max-width: 600px;
-        }
-
-        .service-card li {
-            padding-left: 1.5em;
-            position: relative;
-        }
-
-        .service-card li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-        }
-
-        /* Imagens intercaladas editorialmente (Moodboard e Jantar) */
-        .service-image-card {
-            padding: 0;
-            display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
-            background: #fff; /* Fundo branco para imagens */
-        }
-
-        .service-image-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1s var(--transition);
-        }
-
-        .service-image-card:hover img {
-            transform: scale(1.05);
-        }
-
-        /* --- TESTEMUNHOS AMPLIADOS E REVISITADOS --- */
-        .testimonials {
-            padding: 160px 6%; /* Mais espaço */
             text-align: center;
-            background: #fff; /* Fundo branco */
+            padding-top: 100px;
         }
 
-        .testimonials h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 6vw, 3.5rem); /* Maior */
-            margin-bottom: 80px;
+        .hero h1 {
+            font-family: 'TAN Aegean', serif;
+            font-size: clamp(3rem, 7vw, 6rem);
+            text-transform: uppercase;
+            font-weight: 100;
+            line-height: 0.9;
         }
 
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Mais largo */
-            gap: 80px;
-            max-width: 1600px; /* Maior */
-            margin: auto;
-        }
-
-        .testimonial {
-            font-size: 1.2rem;
-            color: #5a534c;
-            line-height: 2;
-        }
-
-        .testimonial span {
+        .hero h1 span {
+            font-family: 'Blosta Script', cursive;
+            text-transform: none;
+            font-size: 0.8em;
             display: block;
-            margin-top: 30px;
-            font-size: 1rem;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            margin-top: -10px;
         }
 
-        /* --- FOOTER MINIMALISTA AMPLIADO --- */
-        footer {
-            background: #fff;
-            padding: 160px 6% 80px;
+        /* --- SECTIONS LAYOUT --- */
+        .service-block {
+            padding: 100px 10%;
+            display: flex;
+            align-items: center;
+            gap: 8%;
+            min-height: 80vh;
+        }
+
+        .service-block:nth-child(even) { flex-direction: row-reverse; }
+
+        .service-image { flex: 0 0 45%; height: 70vh; overflow: hidden; }
+        .service-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.5s ease; }
+        .service-block:hover .service-image img { transform: scale(1.05); }
+
+        .service-content { flex: 0 0 45%; position: relative; }
+
+        .service-num {
+            font-family: 'TAN Aegean', serif;
+            font-size: 8rem;
+            color: rgba(0,0,0,0.03);
+            position: absolute;
+            top: -60px; left: -20px;
+            z-index: -1;
+        }
+
+        .service-content h2 {
+            font-family: 'TAN Aegean', serif;
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            font-weight: 100;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .service-content h2 em {
+            font-family: 'Blosta Script', cursive;
+            text-transform: none;
+            font-style: normal;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .service-content p {
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        .service-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .service-list li {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-list li::before {
+            content: "";
+            width: 30px; height: 1px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        /* --- FOOTER CTA --- */
+        .cta-section {
+            padding: 150px 10%;
             text-align: center;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            background: #fff;
         }
 
-        .footer-logo {
-            height: 200px;
-            width: auto;
-            filter: brightness(0.2);
-            margin-bottom: 80px;
-        }
-
-        .footer-credits {
-            font-size: 0.7rem;
+        .cta-section h2 {
+            font-family: 'TAN Aegean', serif;
+            font-size: 3rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #999;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            padding-top: 80px;
+            font-weight: 100;
+            margin-bottom: 40px;
         }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
+        .cta-button {
+            display: inline-block;
+            font-family: 'Blosta Script', cursive;
+            font-size: 3rem;
+            color: var(--text-dark);
+            text-decoration: none;
             transition: var(--transition);
         }
+        .cta-button:hover { opacity: 0.6; transform: translateY(-5px); }
 
-        .reveal.active {
-            opacity: 1;
-            transform: none;
-        }
-
-        /* --- AJUSTES PARA ECRÃS MAIS PEQUENOS --- */
+        /* --- MOBILE --- */
         @media (max-width: 1100px) {
-            header, header.scrolled { padding: 15px 25px; }
-            .logo-img { height: 45px; }
-
-            .hero-content h1 { font-size: 4rem; }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-card { padding: 60px 30px; }
-            .service-image-card { height: 400px; }
-
-            .footer-logo { height: 120px; }
+            header { padding: 15px 25px; }
+            .logo-img { height: 90px; }
+            .service-block, .service-block:nth-child(even) { flex-direction: column; padding: 60px 25px; gap: 40px; }
+            .service-image { width: 100%; height: 50vh; }
+            .service-content { width: 100%; }
+            .service-list { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.5rem; }
         }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-
 <body id="body">
 
     <header id="header">
@@ -358,109 +286,78 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">Sobre</a></li>
-                <li><a href="services.html">Serviços</a></li>
-                <li><a href="contacts.html">Contactos</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contacts.html">Contact</a></li>
             </ul>
         </nav>
     </div>
 
-    <section class="hero-section">
-        <img src="hero_service.jpg" alt="Decoração de Mesa de Casamento em Portugal" class="hero-image">
-        <div class="hero-content reveal">
-            <h1>Serviços</h1>
-            <p>Curadoria da sua celebração de sonho em Portugal</p>
-        </div>
+    <section class="hero reveal">
+        <h1>Services <span>curating your dream</span></h1>
     </section>
 
-    <section class="services-section">
-        <div class="services-grid">
-
-            <div class="service-card reveal">
-                <div class="service-number">1</div>
-                <h3>Planeamento Completo & Design</h3>
-                <p>A jornada completa para casais que procuram paz de espírito absoluta. Inclui a nossa assinatura **curadoria de locais em Portugal** com visitas a 3 locais selecionados.</p>
-                <ul>
-                    <li>Moodboards & Estilismo</li>
-                    <li>Procura de Locais (3 visits)</li>
-                    <li>Gestão de Fornecedores</li>
-                    <li>Transparência Financeira</li>
-                    <li>"Bíblia do Casamento" Final</li>
+    <main>
+        <section class="service-block reveal">
+            <div class="service-image">
+                <img src="hero_service.jpg" alt="Full Planning">
+            </div>
+            <div class="service-content">
+                <span class="service-num">01</span>
+                <h2><em>Full Planning</em> & Design</h2>
+                <p>A complete journey for couples seeking absolute peace of mind. We take care of every detail, from the first spark of inspiration to the final "I do". This includes our signature venue scouting across Portugal's most hidden gems.</p>
+                <ul class="service-list">
+                    <li>Moodboards</li>
+                    <li>Venue Scouting</li>
+                    <li>Vendor Management</li>
+                    <li>Budget Tracking</li>
+                    <li>Event Styling</li>
+                    <li>On-site Team</li>
                 </ul>
             </div>
+        </section>
 
-            <div class="service-card reveal">
-                <div class="service-number">2</div>
-                <h3>Experiência Multi-Dia</h3>
-                <p>Especialização em gerir jornadas de casamentos de destino. Tratamos da logística para os melhores **locais de casamento em Portugal**.</p>
-                <ul>
-                    <li>Jantares de Boas-vindas</li>
-                    <li>Coordenação de Ensaio</li>
-                    <li>Festas Temáticas & Brunches</li>
-                    <li>Gestão Completa de Logística</li>
-                    <li>Atividades para Convidados</li>
+        <section class="service-block reveal">
+            <div class="service-image">
+                <img src="moodboard_planning.jpg" alt="Multi-Day Experience">
+            </div>
+            <div class="service-content">
+                <span class="service-num">02</span>
+                <h2><em>Multi-day</em> Experience</h2>
+                <p>For destination weddings that extend beyond a single day. We curate the entire stay for you and your guests, ensuring a seamless flow between welcome dinners, main celebrations, and recovery brunches.</p>
+                <ul class="service-list">
+                    <li>Welcome Dinners</li>
+                    <li>Rehearsal Logistics</li>
+                    <li>Guest Activities</li>
+                    <li>Themed Parties</li>
+                    <li>Airport Shuttles</li>
+                    <li>Farewell Brunch</li>
                 </ul>
             </div>
+        </section>
 
-            <div class="service-card service-image-card reveal">
-                <img src="moodboard_planning.jpg" alt="Visão e Design do Planeamento">
+        <section class="service-block reveal">
+            <div class="service-image">
+                <img src="dinner_decor.jpg" alt="Bespoke Coordination">
             </div>
-
-            <div class="service-card reveal">
-                <div class="service-number">3</div>
-                <h3>Coordenação à Medida</h3>
-                <p>Execução especializada para o seu **local de casamento português** escolhido. A nossa equipa no local gere toda a logística.</p>
-                <ul>
-                    <li>1 Briefing Meeting Online</li>
-                    <li>Coordenação de Ensaio</li>
-                    <li>Equipa de Evento no Local</li>
-                    <li>Supervisão de Fornecedores</li>
+            <div class="service-content">
+                <span class="service-num">03</span>
+                <h2><em>Bespoke</em> Coordination</h2>
+                <p>Expert execution for your chosen venue. Our team steps in to manage the logistics, timing, and vendor coordination on the day, allowing you to simply be present in the moment.</p>
+                <ul class="service-list">
+                    <li>Timeline Design</li>
+                    <li>Vendor Briefing</li>
+                    <li>Production Team</li>
+                    <li>Crisis Management</li>
                 </ul>
             </div>
+        </section>
+    </main>
 
-            <div class="service-card reveal">
-                <div class="service-number">4</div>
-                <h3>Consultoria Especializada</h3>
-                <p>Inspeções profissionais de locais para degustações e decoração. A nossa Consulta Online oferece clareza no planeamento independente.</p>
-                <ul>
-                    <li>Sessão Estratégica de 1.5h</li>
-                    <li>Estratégia Orçamental</li>
-                    <li>Planeamento de Inspeção de Locais</li>
-                    <li>Feedback Pós-Visita</li>
-                </ul>
-            </div>
-
-            <div class="service-card service-image-card reveal">
-                <img src="dinner_decor.jpg" alt="Decoração de Jantar no Local de Casamento">
-            </div>
-
-        </div>
+    <section class="cta-section reveal">
+        <h2>Ready to start?</h2>
+        <a href="contacts.html" class="cta-button">let's chat</a>
     </section>
-
-    <div class="reveal" style="width: 100vw; height: 50vh; overflow: hidden;">
-        <img src="atmospheric_venue.jpg" alt="Ambiente do Local de Casamento em Portugal" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8);">
-    </div>
-
-    <section class="testimonials reveal">
-        <h2>O Que Dizem Nossos Casais</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial">
-                “Cada detalhe pareceu intencional, elegante e sem esforço. Foi verdadeiramente mágico.”
-                <span>Emma & João</span>
-            </div>
-            <div class="testimonial">
-                “Profissional, refinado e profundamente pessoal. Não poderíamos ter pedido melhor parceiro.”
-                <span>Sophia & Michael</span>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <img src="logo.png" alt="Stacey Marquez Weddings" class="footer-logo">
-        <div class="footer-credits">
-            © 2026 Stacey Marquez Weddings | Todos os Direitos Reservados
-        </div>
-    </footer>
 
     <script>
         const menuToggle = document.getElementById('menuToggle');
@@ -477,16 +374,15 @@
             document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        const reveals = document.querySelectorAll('.reveal');
-        const revealCheck = () => {
-            reveals.forEach(el => {
-                if (el.getBoundingClientRect().top < window.innerHeight - 50) {
-                    el.classList.add('active');
-                }
+        // Reveal animation on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) entry.target.classList.add('active');
             });
-        };
-        window.addEventListener('scroll', revealCheck);
-        revealCheck();
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
