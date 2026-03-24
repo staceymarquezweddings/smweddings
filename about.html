@@ -76,40 +76,45 @@
             padding: 40px;
             display: flex; 
             flex-direction: column; 
-            justify-content: center; /* Centraliza verticalmente na área branca */
-            align-items: center;     /* Centraliza o bloco horizontalmente na área branca */
+            justify-content: center; 
+            align-items: center;     
             background-color: var(--bg); 
         }
 
-        /* Wrapper mais largo para acomodar mais palavras por linha */
         .text-wrapper { 
             max-width: 850px; 
             width: 90%; 
         }
 
-        /* --- TÍTULO (ALINHAMENTO ESCADA) --- */
+        /* --- TÍTULO (ALINHAMENTO ESCADA COM OVERLAP) --- */
         h1 { 
             margin-bottom: 60px;
             line-height: 0.85;
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Alinha a base à esquerda do bloco */
+            align-items: flex-start;
         }
 
         h1 span.let-me {
             font-family: 'TAN Aegean', serif;
-            font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+            /* Tamanho aumentado em 50% face ao original */
+            font-size: clamp(2.7rem, 5.2vw, 4.1rem); 
             text-transform: uppercase;
-            font-weight: normal; /* Sem bold */
+            font-weight: normal;
             letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
         }
 
         h1 span.introduce {
             font-family: 'Blosta Script', cursive;
             font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-            margin-left: 100px; /* Recuo à direita conforme imagem */
-            margin-top: -15px;
-            font-weight: normal; /* Sem bold */
+            margin-left: 100px;
+            /* Margem negativa para subir o texto e criar sobreposição */
+            margin-top: -35px;
+            font-weight: normal;
+            position: relative;
+            z-index: 2; /* Garante que fica por cima do let-me */
         }
 
         /* --- CORPO DE TEXTO --- */
@@ -122,9 +127,9 @@
         .bio-text p { 
             font-family: 'Helvetica World', 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 1.05rem;
-            line-height: 1.5; /* Altura de linha ajustada para densidade de palavras */
+            line-height: 1.5; 
             text-align: justify; 
-            font-weight: 300; /* Texto fino, sem bold */
+            font-weight: 300; 
             color: #1a1a1a;
         }
         
@@ -148,7 +153,7 @@
             .image-side { height: 45vh; position: relative; }
             .content-side { padding: 40px 20px; }
             .text-wrapper { width: 100%; }
-            h1 span.introduce { margin-left: 40px; }
+            h1 span.introduce { margin-left: 40px; margin-top: -25px; }
             .bio-text p { text-align: left; }
         }
     </style>
