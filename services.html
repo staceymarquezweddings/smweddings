@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en-CA">
+<html lang="pt">
 <head>
-    <title>Wedding Venue Scouting & Planning Services Portugal | Stacey Marquez</title>
-    <meta name="description" content="Discover premium luxury wedding venues in Portugal. Specialized venue scouting, full planning, and multi-day coordination for international couples.">
-    <meta name="keywords" content="wedding venues in portugal, wedding planner portugal, venue scouting portugal, luxury wedding portugal, destination wedding planner, portugal wedding services">
-
+    <title>Serviços de Casamento em Portugal | Stacey Marquez Weddings</title>
+    <meta name="description" content="Descubra os nossos serviços de planeamento de casamentos de luxo em Portugal. Desde a coordenação do dia até ao planeamento completo e design de casamentos multi-dia.">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Wedding Venue Scouting & Planning",
+      "serviceType": "Planeamento de Casamentos e Coordenação",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Stacey Marquez Weddings",
@@ -19,16 +17,8 @@
         "@type": "Country",
         "name": "Portugal"
       },
-      "description": "Expert curation of the most exclusive wedding venues in Portugal and bespoke planning services."
+      "description": "Serviços de planeamento de casamentos de luxo, curadoria de locais e coordenação de eventos em Portugal."
     }
-    </script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-GQ0VPE0KMT');
     </script>
 
     <meta charset="UTF-8">
@@ -106,59 +96,246 @@
         .menu-overlay nav li { margin: 25px 0; }
         .menu-overlay nav a { font-size: 24px; color: var(--text-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 6px; }
 
-        .intro-hero { display: flex; min-height: 80vh; margin-top: 80px; }
-        .intro-image-side { width: 50%; height: 80vh; overflow: hidden; }
-        .intro-image-side img { width: 100%; height: 100%; object-fit: cover; }
-        .intro-text-side { width: 50%; padding: 0 8%; display: flex; flex-direction: column; justify-content: center; }
-        
-        /* Font Montserrat (Light) usada aqui */
-        .intro-text-side span { font-size: 0.8rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 300; }
-        
-        /* Redução do tamanho do título para alinhar com o "Let's chat" */
-        .intro-text-side h1 { 
-            font-family: 'Cormorant Garamond', serif; 
-            font-size: clamp(1.8rem, 3vw, 2.4rem); 
-            font-weight: 300; 
-            font-style: italic; 
-            line-height: 1.1; 
-            margin-bottom: 40px; 
-            color: var(--text-dark); 
+        /* --- SECÇÃO HERÓI GIGANTE (BASEADA NO EXEMPLO) --- */
+        .hero-section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
         }
-        
-        .intro-text-side p { font-size: 1.1rem; color: #5a534c; max-width: 500px; }
 
-        .services-section { padding: 120px 6%; max-width: 1600px; margin: auto; }
-        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
-        .service-card { background: var(--card); padding: 60px; box-shadow: var(--shadow); transition: var(--transition); border: 1px solid rgba(0,0,0,0.02); }
-        .service-card:hover { transform: translateY(-10px); }
-        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 500; margin-bottom: 0.5em; color: var(--text-dark); }
-        .tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; color: var(--gold); margin-bottom: 1.5em; }
-        .service-card p { font-size: 1rem; color: #4f4841; margin-bottom: 25px; }
-        .service-card ul { list-style: none; font-size: 0.95rem; color: #4f4841; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .service-card li { padding-left: 1.5em; position: relative; }
-        .service-card li::before { content: "•"; position: absolute; left: 0; color: var(--gold); }
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            filter: brightness(0.9);
+        }
 
-        .testimonials { padding: 80px 6%; text-align: center; background: #edeae7; }
-        .testimonials h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 50px; }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; max-width: 1200px; margin: auto; }
-        
-        .cta-section { padding: 100px 6%; text-align: center; }
-        .cta-btn { display: inline-block; padding: 20px 50px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.3em; text-transform: uppercase; transition: 0.4s; }
-        .cta-btn:hover { background: var(--gold); color: white; }
+        .hero-content {
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            padding: 0 10%;
+        }
 
-        .reveal { opacity: 0; transform: translateY(20px); transition: var(--transition); }
-        .reveal.active { opacity: 1; transform: none; }
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
 
+        .hero-content p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 200;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* --- NOVA GRELHA DE SERVIÇOS MINIMALISTA (BASEADA NO EXEMPLO) --- */
+        .services-section {
+            padding: 120px 0; /* Remover padding lateral */
+            background: var(--bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 100%; /* Ocupar toda a largura */
+            margin: auto;
+            border-top: 1px solid rgba(0,0,0,0.05); /* Linha divisória fina */
+        }
+
+        /* Cartões de serviço baseados em texto */
+        .service-card {
+            background: var(--bg); /* Fundo igual ao do site */
+            padding: 80px; /* Mais espaço interno */
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0,0,0,0.05); /* Linha divisória fina */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Alinhamento editorial */
+        }
+
+        /* Efeito de hover suave no texto, não no card */
+        .service-card h3, .service-card p, .service-card ul {
+            transition: var(--transition);
+        }
+        .service-card:hover h3 { color: var(--gold); }
+
+        .service-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 4.5rem); /* Grande */
+            font-weight: 300;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .service-number::after {
+            content: ".";
+            display: inline-block;
+            margin-left: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 300;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem); /* Maior e mais editorial */
+            font-weight: 500;
+            margin-bottom: 1em;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+            color: #4f4841;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            font-size: 1rem;
+            color: #4f4841;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adaptável */
+            gap: 15px;
+            max-width: 600px;
+        }
+
+        .service-card li {
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        .service-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        /* Imagens intercaladas editorialmente (Moodboard e Jantar) */
+        .service-image-card {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: #fff; /* Fundo branco para imagens */
+        }
+
+        .service-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s var(--transition);
+        }
+
+        .service-image-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* --- TESTEMUNHOS AMPLIADOS E REVISITADOS --- */
+        .testimonials {
+            padding: 160px 6%; /* Mais espaço */
+            text-align: center;
+            background: #fff; /* Fundo branco */
+        }
+
+        .testimonials h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 3.5rem); /* Maior */
+            margin-bottom: 80px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Mais largo */
+            gap: 80px;
+            max-width: 1600px; /* Maior */
+            margin: auto;
+        }
+
+        .testimonial {
+            font-size: 1.2rem;
+            color: #5a534c;
+            line-height: 2;
+        }
+
+        .testimonial span {
+            display: block;
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* --- FOOTER MINIMALISTA AMPLIADO --- */
+        footer {
+            background: #fff;
+            padding: 160px 6% 80px;
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .footer-logo {
+            height: 200px;
+            width: auto;
+            filter: brightness(0.2);
+            margin-bottom: 80px;
+        }
+
+        .footer-credits {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #999;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 80px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* --- AJUSTES PARA ECRÃS MAIS PEQUENOS --- */
         @media (max-width: 1100px) {
             header, header.scrolled { padding: 15px 25px; }
             .logo-img { height: 45px; }
-            .intro-hero { flex-direction: column; margin-top: 60px; }
-            .intro-image-side, .intro-text-side { width: 100%; }
-            .intro-text-side { padding: 60px 30px; text-align: center; }
-            .services-grid { grid-template-columns: 1fr; }
-            .service-card { padding: 40px; }
-            .service-card ul { grid-template-columns: 1fr; }
-            .intro-text-side h1 { font-size: 2rem; }
+
+            .hero-content h1 { font-size: 4rem; }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card { padding: 60px 30px; }
+            .service-image-card { height: 400px; }
+
+            .footer-logo { height: 120px; }
         }
     </style>
 </head>
@@ -167,11 +344,11 @@
 
     <header id="header">
         <a href="index.html">
-            <img src="logo.png" alt="Stacey Marquez Weddings - Premium Wedding Venues in Portugal" class="logo-img">
+            <img src="logo.png" alt="Stacey Marquez Weddings" class="logo-img">
         </a>
         <div class="header-right">
             <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank">
-                <img src="instagram.png" alt="Explore Exclusive Portugal Wedding Venues on Instagram" class="instagram-icon">
+                <img src="instagram.png" alt="Instagram" class="instagram-icon">
             </a>
             <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
         </div>
@@ -181,91 +358,109 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contacts.html">Contacts</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="services.html">Serviços</a></li>
+                <li><a href="contacts.html">Contactos</a></li>
             </ul>
         </nav>
     </div>
 
-    <section class="intro-hero">
-        <div class="intro-image-side reveal">
-            <img src="services.jpg" alt="Luxury Wedding Venues in Portugal - Specialized Scouting Services">
-        </div>
-        <div class="intro-text-side reveal">
-            <span>The Experience</span>
-            <h1>Services</h1>
-            <p>From intimate elopements to grand multi-day celebrations, we design weddings and curate the most exclusive **wedding venues in Portugal** that embrace culture and elegance.</p>
+    <section class="hero-section">
+        <img src="hero_service.jpg" alt="Decoração de Mesa de Casamento em Portugal" class="hero-image">
+        <div class="hero-content reveal">
+            <h1>Serviços</h1>
+            <p>Curadoria da sua celebração de sonho em Portugal</p>
         </div>
     </section>
 
     <section class="services-section">
         <div class="services-grid">
+
             <div class="service-card reveal">
-                <h3>Full Planning & Design</h3>
-                <div class="tagline">From vision to flawless reality.</div>
-                <p>The complete journey for couples seeking absolute peace of mind. Includes our signature **venue scouting in Portugal** with visits to 3 curated locations, ensuring the perfect backdrop for your story.</p>
+                <div class="service-number">1</div>
+                <h3>Planeamento Completo & Design</h3>
+                <p>A jornada completa para casais que procuram paz de espírito absoluta. Inclui a nossa assinatura **curadoria de locais em Portugal** com visitas a 3 locais selecionados.</p>
                 <ul>
-                    <li>Moodboards & Styling</li>
-                    <li>Venue Scouting (3 visits)</li>
-                    <li>Financial Transparency</li>
-                    <li>Supplier Management</li>
-                    <li>Final "Wedding Bible"</li>
-                    <li>Onsite Coordination Team</li>
+                    <li>Moodboards & Estilismo</li>
+                    <li>Procura de Locais (3 visits)</li>
+                    <li>Gestão de Fornecedores</li>
+                    <li>Transparência Financeira</li>
+                    <li>"Bíblia do Casamento" Final</li>
                 </ul>
             </div>
 
             <div class="service-card reveal">
-                <h3>Multi-Day Experience</h3>
-                <div class="tagline">A celebration that unfolds.</div>
-                <p>Specialized expertise in managing destination wedding journeys. We handle logistics for the best **wedding venues in Portugal**, from welcome dinners to post-wedding brunches.</p>
+                <div class="service-number">2</div>
+                <h3>Experiência Multi-Dia</h3>
+                <p>Especialização em gerir jornadas de casamentos de destino. Tratamos da logística para os melhores **locais de casamento em Portugal**.</p>
                 <ul>
-                    <li>Welcome Dinners</li>
-                    <li>Rehearsal Coordination</li>
-                    <li>Themed Parties & Brunches</li>
-                    <li>Full Logistics Management</li>
-                    <li>Guest Activity Planning</li>
-                    <li>Bespoke Tour Curation</li>
+                    <li>Jantares de Boas-vindas</li>
+                    <li>Coordenação de Ensaio</li>
+                    <li>Festas Temáticas & Brunches</li>
+                    <li>Gestão Completa de Logística</li>
+                    <li>Atividades para Convidados</li>
+                </ul>
+            </div>
+
+            <div class="service-card service-image-card reveal">
+                <img src="moodboard_planning.jpg" alt="Visão e Design do Planeamento">
+            </div>
+
+            <div class="service-card reveal">
+                <div class="service-number">3</div>
+                <h3>Coordenação à Medida</h3>
+                <p>Execução especializada para o seu **local de casamento português** escolhido. A nossa equipa no local gere toda a logística.</p>
+                <ul>
+                    <li>1 Briefing Meeting Online</li>
+                    <li>Coordenação de Ensaio</li>
+                    <li>Equipa de Evento no Local</li>
+                    <li>Supervisão de Fornecedores</li>
                 </ul>
             </div>
 
             <div class="service-card reveal">
-                <h3>Bespoke Coordination</h3>
-                <div class="tagline">Grace under pressure.</div>
-                <p>Expert execution for your chosen **portuguese wedding venue**. Our onsite team manages all logistics and supplier supervision so you can be fully present.</p>
+                <div class="service-number">4</div>
+                <h3>Consultoria Especializada</h3>
+                <p>Inspeções profissionais de locais para degustações e decoração. A nossa Consulta Online oferece clareza no planeamento independente.</p>
                 <ul>
-                    <li>1 Online Briefing Meeting</li>
-                    <li>Rehearsal Coordination</li>
-                    <li>Onsite Event Team</li>
-                    <li>Supplier Supervision</li>
+                    <li>Sessão Estratégica de 1.5h</li>
+                    <li>Estratégia Orçamental</li>
+                    <li>Planeamento de Inspeção de Locais</li>
+                    <li>Feedback Pós-Visita</li>
                 </ul>
             </div>
 
-            <div class="service-card reveal">
-                <h3>Expert Consulting</h3>
-                <div class="tagline">Clarity before commitment.</div>
-                <p>Professional site inspections for tastings and decor. Our Online Consult provides clarity on independent planning and choosing the right **wedding venues in Portugal**.</p>
-                <ul>
-                    <li>1.5h Strategic Session</li>
-                    <li>Budget Strategy</li>
-                    <li>Site Inspection Planning</li>
-                    <li>Post-Visit Feedback</li>
-                </ul>
+            <div class="service-card service-image-card reveal">
+                <img src="dinner_decor.jpg" alt="Decoração de Jantar no Local de Casamento">
             </div>
+
         </div>
     </section>
+
+    <div class="reveal" style="width: 100vw; height: 50vh; overflow: hidden;">
+        <img src="atmospheric_venue.jpg" alt="Ambiente do Local de Casamento em Portugal" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8);">
+    </div>
 
     <section class="testimonials reveal">
-        <h2>Kind Words</h2>
+        <h2>O Que Dizem Nossos Casais</h2>
         <div class="testimonial-grid">
-            <div class="testimonial">“Every detail felt intentional, elegant, and effortless.”<br>Emma & João</div>
-            <div class="testimonial">“Professional, refined, and deeply personal.”<br>Sophia & Michael</div>
+            <div class="testimonial">
+                “Cada detalhe pareceu intencional, elegante e sem esforço. Foi verdadeiramente mágico.”
+                <span>Emma & João</span>
+            </div>
+            <div class="testimonial">
+                “Profissional, refinado e profundamente pessoal. Não poderíamos ter pedido melhor parceiro.”
+                <span>Sophia & Michael</span>
+            </div>
         </div>
     </section>
 
-    <section class="cta-section reveal">
-        <a href="contacts.html" class="cta-btn">Begin Your Journey</a>
-    </section>
+    <footer>
+        <img src="logo.png" alt="Stacey Marquez Weddings" class="footer-logo">
+        <div class="footer-credits">
+            © 2026 Stacey Marquez Weddings | Todos os Direitos Reservados
+        </div>
+    </footer>
 
     <script>
         const menuToggle = document.getElementById('menuToggle');
