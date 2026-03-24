@@ -51,7 +51,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- HEADER (IGUAL À HOME) --- */
+        /* --- HEADER --- */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -162,10 +162,10 @@
             margin-top: 120px; 
         }
 
-        /* --- TÍTULO (SEM SOBREPOSIÇÃO) --- */
+        /* --- TÍTULO (MESMO TAMANHO DOS CONTACTOS) --- */
         h1 { 
             margin-bottom: 60px;
-            line-height: 1; /* Aumentado para dar espaço vertical */
+            line-height: 1;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -174,9 +174,10 @@
 
         h1 span.let-me {
             font-family: 'TAN Aegean', serif;
-            font-size: clamp(2.7rem, 5.2vw, 4.1rem); 
+            /* Tamanho igualado ao clamp da página de contactos */
+            font-size: clamp(2.7rem, 4.2vw, 3.85rem); 
             text-transform: uppercase;
-            font-weight: normal;
+            font-weight: 100;
             letter-spacing: 1px;
             position: relative;
             z-index: 1;
@@ -187,8 +188,7 @@
             font-family: 'Blosta Script', cursive;
             font-size: clamp(2.5rem, 5.5vw, 4.5rem);
             margin-left: 105px; 
-            /* Margem positiva para afastar completamente e não tocar */
-            margin-top: -15px; 
+            margin-top: -15px; /* Alinhamento corrigido para não tocar */
             letter-spacing: -1.5px; 
             font-weight: 300; 
             position: relative;
@@ -234,8 +234,9 @@
             .image-side { height: 45vh; position: relative; }
             .content-side { padding: 40px 20px; }
             .text-wrapper { width: 100%; margin-top: 40px; }
+            h1 { align-items: center; } /* Centralizado em mobile para consistência */
             h1 span.introduce { 
-                margin-left: 60px; 
+                margin-left: 40px; 
                 margin-top: 15px;
                 letter-spacing: -1px;
             }
