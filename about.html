@@ -16,7 +16,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
 
     <style>
         /* --- FONTES LOCAIS --- */
@@ -35,8 +35,8 @@
         }
 
         :root {
-            --bg: #ffffff;
-            --text: #1a1a1a;
+            --bg-neutral: #ffffff;
+            --text-dark: #1a1a1a;
             --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
@@ -44,14 +44,14 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Helvetica World', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-neutral);
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- HEADER --- */
+        /* --- HEADER (IGUAL À HOME) --- */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -60,15 +60,81 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: var(--transition);
         }
-        .logo-img { height: 50px; width: auto; filter: brightness(0); }
-        .header-right { display: flex; align-items: center; gap: 30px; }
-        .instagram-icon { width: 20px; filter: brightness(0); }
-        .menu-toggle { width: 30px; height: 30px; cursor: pointer; position: relative; z-index: 4000; }
-        .menu-toggle span { position: absolute; width: 24px; height: 1px; background: #000; }
-        .menu-toggle span:nth-child(1) { transform: translateY(-6px); }
-        .menu-toggle span:nth-child(2) { width: 16px; margin-left: 8px; }
-        .menu-toggle span:nth-child(3) { transform: translateY(6px); }
+
+        header.scrolled {
+            padding: 15px 60px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        .logo-img {
+            height: 130px; 
+            width: auto;
+            max-width: 560px;
+            filter: brightness(0);
+            transition: var(--transition);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .instagram-icon {
+            width: 24px; height: 24px;
+            transition: var(--transition);
+            filter: brightness(0);
+        }
+
+        .menu-toggle {
+            width: 44px; height: 44px;
+            cursor: pointer;
+            position: relative;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 4000;
+        }
+
+        .menu-toggle span {
+            position: absolute;
+            width: 30px; height: 1px;
+            background: #000000;
+            transition: var(--transition);
+        }
+
+        .menu-toggle span:nth-child(1) { transform: translateY(-8px); }
+        .menu-toggle span:nth-child(2) { width: 20px; margin-left: 10px; }
+        .menu-toggle span:nth-child(3) { transform: translateY(8px); }
+
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translateY(0); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(0); }
+
+        /* --- MENU OVERLAY --- */
+        .menu-overlay {
+            position: fixed; inset: 0;
+            background: #f4f2f0;
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.5s ease;
+            z-index: 2500;
+        }
+
+        .menu-overlay.active { opacity: 1; visibility: visible; }
+        .menu-overlay nav ul { list-style: none; text-align: center; }
+        .menu-overlay nav li { margin: 25px 0; }
+        .menu-overlay nav a {
+            font-size: 24px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            transition: var(--transition);
+        }
 
         /* --- LAYOUT GRID 40/60 --- */
         main { 
@@ -87,18 +153,19 @@
             flex-direction: column; 
             justify-content: center; 
             align-items: center;     
-            background-color: var(--bg); 
+            background-color: var(--bg-neutral); 
         }
 
         .text-wrapper { 
             max-width: 850px; 
             width: 90%; 
+            margin-top: 120px; 
         }
 
-        /* --- TÍTULO (ALINHAMENTO PRECISO) --- */
+        /* --- TÍTULO (SEM SOBREPOSIÇÃO) --- */
         h1 { 
             margin-bottom: 60px;
-            line-height: 0.85;
+            line-height: 1; /* Aumentado para dar espaço vertical */
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -120,6 +187,7 @@
             font-family: 'Blosta Script', cursive;
             font-size: clamp(2.5rem, 5.5vw, 4.5rem);
             margin-left: 105px; 
+            /* Margem positiva para afastar completamente e não tocar */
             margin-top: -15px; 
             letter-spacing: -1.5px; 
             font-weight: 300; 
@@ -146,7 +214,6 @@
         }
         
         .social-link { 
-            font-family: 'Montserrat', sans-serif;
             align-self: flex-start;
             margin-top: 50px; 
             text-decoration: none; 
@@ -161,32 +228,47 @@
 
         /* --- MOBILE --- */
         @media (max-width: 1100px) {
+            header, header.scrolled { padding: 15px 25px; }
+            .logo-img { height: 90px; }
             main { grid-template-columns: 100%; }
             .image-side { height: 45vh; position: relative; }
             .content-side { padding: 40px 20px; }
-            .text-wrapper { width: 100%; }
+            .text-wrapper { width: 100%; margin-top: 40px; }
             h1 span.introduce { 
                 margin-left: 60px; 
-                margin-top: -5px;
+                margin-top: 15px;
                 letter-spacing: -1px;
             }
             .bio-text p { text-align: left; }
         }
     </style>
 </head>
-<body>
+<body id="body">
 
-    <header>
+    <header id="header">
         <a href="index.html">
             <img src="logo.png" alt="Stacey Marquez Weddings" class="logo-img">
         </a>
         <div class="header-right">
-            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank">
+            <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank" rel="noopener">
                 <img src="instagram.png" alt="Instagram" class="instagram-icon">
             </a>
-            <div class="menu-toggle"><span></span><span></span><span></span></div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span><span></span><span></span>
+            </div>
         </div>
     </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <main>
         <div class="image-side">
@@ -209,6 +291,22 @@
             </div>
         </div>
     </main>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const body = document.getElementById('body');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
 
 </body>
 </html>
