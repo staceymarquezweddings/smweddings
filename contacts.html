@@ -1,62 +1,56 @@
 <!DOCTYPE html>
 <html lang="en-CA">
 <head>
-    <title>Contact Stacey Marquez | Start Planning Your Wedding in Portugal</title>
-    <meta name="description" content="Ready to find the perfect wedding venue in Portugal? Contact Stacey Marquez Weddings for a personalized consultation and venue scouting inquiry.">
-    <meta name="keywords" content="contact wedding planner portugal, wedding inquiry portugal, stacey marquez weddings contact, destination wedding consultation">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "mainEntity": {
-        "@type": "WeddingService",
-        "name": "Stacey Marquez Weddings",
-        "telephone": "+351912580628",
-        "email": "stacey_marquez@hotmail.com",
-        "areaServed": "Portugal",
-        "description": "Bespoke wedding planning and venue scouting services in Portugal."
-      }
-    }
-    </script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ0VPE0KMT"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
       gtag('config', 'G-GQ0VPE0KMT');
     </script>
 
+    <title>Contact Stacey Marquez | Start Planning Your Wedding in Portugal</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
 
     <style>
+        /* --- FONTES LOCAIS --- */
+        @font-face {
+            font-family: 'TAN Aegean';
+            src: url('TAN - AEGEAN Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Blosta Script';
+            src: url('Blosta-Script.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         :root {
-            --bg: #f4f2f0;
-            --text-dark: #2a2622;
-            --accent: #5a534c;
-            --gold: #b89f7e;
-            --ease: cubic-bezier(0.19, 1, 0.22, 1);
-            --transition: all 0.6s var(--ease);
+            --bg-neutral: #f4f2f0;
+            --text-dark: #1a1a1a;
+            --transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg);
+            background-color: var(--bg-neutral);
             color: var(--text-dark);
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        body.menu-open { overflow: hidden; }
-
+        /* --- HEADER --- */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
@@ -74,12 +68,40 @@
             backdrop-filter: blur(15px);
         }
 
-        .logo-img { height: 65px; width: auto; filter: brightness(0.2); transition: var(--transition); }
-        .header-right { display: flex; align-items: center; gap: 30px; }
-        .instagram-icon { width: 24px; height: 24px; filter: brightness(0.2); transition: var(--transition); }
+        .logo-img {
+            height: 130px; 
+            width: auto;
+            filter: brightness(0) invert(1);
+            transition: var(--transition);
+        }
 
-        .menu-toggle { width: 44px; height: 44px; cursor: pointer; position: relative; display: flex; align-items: center; justify-content: center; z-index: 4000; }
-        .menu-toggle span { position: absolute; width: 30px; height: 1px; background: var(--text-dark); transition: var(--transition); }
+        header.scrolled .logo-img, body.menu-open .logo-img {
+            filter: brightness(0);
+        }
+
+        .header-right { display: flex; align-items: center; gap: 30px; }
+
+        .instagram-icon {
+            width: 24px; height: 24px;
+            filter: brightness(0.2);
+            transition: var(--transition);
+        }
+
+        .menu-toggle {
+            width: 44px; height: 44px;
+            cursor: pointer;
+            position: relative;
+            z-index: 4000;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .menu-toggle span {
+            position: absolute;
+            width: 30px; height: 1px;
+            background: var(--text-dark);
+            transition: var(--transition);
+        }
+
         .menu-toggle span:nth-child(1) { transform: translateY(-8px); }
         .menu-toggle span:nth-child(2) { width: 20px; margin-left: 10px; }
         .menu-toggle span:nth-child(3) { transform: translateY(8px); }
@@ -88,9 +110,10 @@
         .menu-toggle.active span:nth-child(2) { opacity: 0; }
         .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translateY(0); }
 
+        /* --- MENU OVERLAY --- */
         .menu-overlay {
             position: fixed; inset: 0;
-            background: var(--bg);
+            background: var(--bg-neutral);
             display: flex; justify-content: center; align-items: center;
             opacity: 0; visibility: hidden;
             transition: opacity 0.5s ease;
@@ -100,59 +123,112 @@
         .menu-overlay.active { opacity: 1; visibility: visible; }
         .menu-overlay nav ul { list-style: none; text-align: center; }
         .menu-overlay nav li { margin: 25px 0; }
-        .menu-overlay nav a { font-size: 24px; color: var(--text-dark); text-decoration: none; text-transform: uppercase; letter-spacing: 6px; transition: var(--transition); }
-
-        main { display: flex; min-height: 100vh; width: 100%; }
-        .image-side { width: 66.66%; height: 100vh; position: sticky; top: 0; overflow: hidden; }
-        .image-side img { width: 100%; height: 100%; object-fit: cover; }
-        .content-side { width: 33.34%; background-color: var(--bg); padding: 140px 5% 80px; display: flex; flex-direction: column; justify-content: center; }
-
-        /* Tamanho de letra reduzido para igualar à página About */
-        h1 { 
-            font-family: 'Cormorant Garamond', serif; 
-            font-size: clamp(1.8rem, 3vw, 2.4rem); 
-            font-weight: 300; 
-            font-style: italic; 
-            line-height: 1.1; 
-            margin-bottom: 40px; 
-            letter-spacing: -1px; 
-            text-align: left; 
+        .menu-overlay nav a {
+            font-size: 24px;
+            color: var(--text-dark);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 6px;
         }
 
-        form { display: flex; flex-direction: column; gap: 20px; }
-        input, textarea { width: 100%; padding: 15px 0; background: transparent; border: none; border-bottom: 1px solid rgba(0,0,0,0.1); font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--text-dark); transition: 0.4s; }
+        /* --- LAYOUT FIX --- */
+        main { 
+            display: flex; 
+            width: 100%; 
+            min-height: 100vh;
+        }
+        
+        .image-side { 
+            width: 50%; 
+            height: 100vh; 
+            position: sticky; 
+            top: 0;
+        }
+
+        .image-side img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block;
+        }
+        
+        .content-side { 
+            width: 50%; 
+            padding: 180px 8% 80px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center;
+        }
+
+        /* --- TITULO --- */
+        h1.lets-chat { 
+            margin-bottom: 60px;
+            font-family: 'TAN Aegean', serif;
+            font-size: clamp(2.7rem, 5.2vw, 4.1rem); 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1;
+            font-weight: normal;
+        }
+
+        /* --- FORM --- */
+        form { display: flex; flex-direction: column; gap: 25px; width: 100%; }
+        
+        input, textarea { 
+            width: 100%; 
+            padding: 15px 0; 
+            background: transparent; 
+            border: none; 
+            border-bottom: 1px solid rgba(0,0,0,0.1); 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 300;
+            font-size: 1rem; 
+            color: var(--text-dark); 
+        }
+
         input:focus, textarea:focus { outline: none; border-bottom-color: var(--text-dark); }
-        textarea { min-height: 100px; resize: none; }
+        textarea { min-height: 120px; resize: none; }
 
-        button { margin-top: 20px; padding: 20px; background: var(--text-dark); border: none; color: #fff; text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; cursor: pointer; transition: 0.4s; }
-        button:hover { opacity: 0.8; }
-
-        .direct-contact { margin-top: 50px; font-size: 0.8rem; letter-spacing: 1px; line-height: 2.2; text-align: center; } 
-        .direct-contact a { color: var(--text-dark); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); transition: 0.3s; }
-
-        @media (max-width: 1100px) {
-            header, header.scrolled { padding: 15px 25px; }
-            .header-right { gap: 20px; }
-            .logo-img { height: 45px; }
-            main { flex-direction: column; }
-            .image-side { width: 100%; height: 40vh; position: relative; }
-            .content-side { width: 100%; padding: 60px 30px; text-align: center; }
-            h1 { text-align: center; font-size: 2rem; }
+        /* --- BOTAO (FONTE BLOSTA SCRIPT) --- */
+        button { 
+            margin-top: 20px; 
+            padding: 15px; 
+            background-color: var(--text-dark); 
+            border: none; 
+            color: #ffffff; 
+            font-family: 'Blosta Script', cursive;
+            font-size: 2.5rem; /* Ajustado para a visibilidade da fonte manuscrita */
+            cursor: pointer; 
+            transition: var(--transition); 
+        }
+        
+        button:hover { 
+            opacity: 0.9;
         }
 
-        .reveal { opacity: 0; animation: revealUp 1.4s var(--ease) forwards; }
-        @keyframes revealUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        /* --- MOBILE --- */
+        @media (max-width: 1100px) {
+            main { flex-direction: column; }
+            .image-side { width: 100%; height: 45vh; position: relative; }
+            .content-side { width: 100%; padding: 60px 30px; }
+            header, header.scrolled { padding: 15px 25px; }
+            .logo-img { height: 80px; }
+            h1.lets-chat { text-align: center; }
+        }
+
+        .reveal { opacity: 0; animation: revealUp 1.2s forwards; }
+        @keyframes revealUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body id="body">
 
     <header id="header">
         <a href="index.html">
-            <img src="logo.png" alt="Stacey Marquez Weddings - Contact for Luxury Portugal Venues" class="logo-img">
+            <img src="logo.png" alt="Stacey Marquez Weddings" class="logo-img">
         </a>
         <div class="header-right">
             <a href="https://www.instagram.com/staceymarquez.weddings/" target="_blank">
-                <img src="instagram.png" alt="Stacey Marquez Instagram - Wedding Venue Inspiration Portugal" class="instagram-icon">
+                <img src="instagram.png" alt="Instagram" class="instagram-icon">
             </a>
             <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
         </div>
@@ -164,17 +240,18 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="contacts.html">Contacts</a></li>
+                <li><a href="contacts.html">Contact</a></li>
             </ul>
         </nav>
     </div>
 
     <main>
-        <div class="image-side">
-            <img src="contact.jpg" alt="Inquire about luxury wedding venues and planning in Portugal">
-        </div>
-        <div class="content-side">
-            <h1 class="reveal">Let's chat</h1>
+        <section class="image-side">
+            <img src="contact.jpg" alt="Contact Us">
+        </section>
+        <section class="content-side">
+            <h1 class="lets-chat reveal">LET'S chat</h1>
+
             <form action="https://formspree.io/f/mykjynba" method="POST" class="reveal" style="animation-delay: 0.2s;">
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="E-mail" required>
@@ -182,11 +259,7 @@
                 <textarea name="message" placeholder="Give us all the details" required></textarea>
                 <button type="submit">Send</button>
             </form>
-            <div class="direct-contact reveal" style="animation-delay: 0.4s;">
-                <p><a href="https://wa.me/351912580628" target="_blank">+351 912 580 628</a></p>
-                <p><a href="mailto:stacey_marquez@hotmail.com">stacey_marquez@hotmail.com</a></p>
-            </div>
-        </div>
+        </section>
     </main>
 
     <script>
